@@ -8,7 +8,7 @@ const Home=()=> {
         <h1>Helene Bottin </h1>
      </Section>
       <Section>
-        <h1>Helene Bottin </h1>
+        <h1>Services </h1>
      </Section>
     </div>
   );
