@@ -1,0 +1,40 @@
+.menu-container {
+width:20rem;
+transition:all 0.2s;
+height:5rem;
+background-color:#59545484;
+position:fixed;
+right:calc(50% - 10rem);
+bottom:2rem;
+border-radius: 5rem;
+border:white solid 0.1rem;
+padding:1rem 2rem;
+
+&:hover {
+    transition:all 0.2s;
+    background-color:#595454aa;
+}
+
+&__icons-wrapper {
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    font-size: 2rem;
+    border-radius:50%;
+    cursor:pointer;
+    transition:all 0.2s;
+
+    &__icon{
+    &--hovered{
+        color:#6366F1;
+        transition:all 0.2s;
+
+    }
+    }
+
+
+
+}
+}
