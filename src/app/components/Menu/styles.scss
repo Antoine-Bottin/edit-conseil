@@ -1,40 +1,58 @@
 .menu-container {
-width:20rem;
-transition:all 0.2s;
-height:5rem;
-background-color:#59545484;
-position:fixed;
-right:calc(50% - 10rem);
-bottom:2rem;
-border-radius: 5rem;
-border:white solid 0.2rem;
-padding:1rem 2rem;
+  width: auto;
+  transition: all 0.2s;
+  height: 4rem;
+  background-color: #6366f1;
+  position: fixed;
+  left: 2rem;
+  transition: all 1.5s;
+  bottom: 2rem;
+  border-radius: 5rem;
+  border: white solid 0.2rem;
+  padding: 1rem 1.5rem;
 
-&:hover {
-    transition:all 0.2s;
-    background-color:#595454aa;
-}
+  &:hover {
+    transition: all 0.2s;
+  }
 
-&__icons-wrapper {
-    height:100%;
-    width:100%;
-    display:flex;
+  &--centered {
+    left: calc(50% - 7.5rem);
+    transition: all 1.5s;
+    background-color: #59545484;
+    border: FFABF3 solid 0.2rem;
+  }
+
+  &__title {
+    position: relative;
+    top: -2rem;
+    border-radius: 2rem;
+    border: white solid 0.2rem;
+    border-bottom: none;
+    padding: 0.5rem 1rem;
+  }
+
+  &__icons-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     font-size: 2rem;
-    border-radius:50%;
-    cursor:pointer;
-    transition:all 0.2s;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
 
-    &__icon{
-    &--hovered{
-        color:#6366F1;
-        transition:all 0.2s;
-
+    &__icon {
+      &__home,
+      &__myself,
+      &__numbers,
+      &__services,
+      &__prices {
+        &:hover {
+          color: #6366f1;
+          transition: all 0.2s;
+        }
+      }
     }
-    }
-
-
-
-}
+  }
 }

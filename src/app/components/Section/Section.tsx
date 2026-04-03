@@ -1,11 +1,17 @@
-import { ReactNode } from "react"
-import "./styles.scss"
-const Section = ({children}:{children: ReactNode}) => {
+import { ReactNode } from 'react';
+import './styles.scss';
+
+interface SectionProps {
+  children: ReactNode;
+  id?: string;
+}
+
+const Section = ({ children, id }: SectionProps) => {
   return (
-    <section className="section-container">
+    <section id={id} className="section-container">
       {children}
     </section>
-  )
-}
+  );
+};
 
 export default Section;

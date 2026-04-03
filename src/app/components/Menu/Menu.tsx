@@ -1,32 +1,69 @@
-'use client'
+'use client';
 
-import './styles.scss'
-import { IoHomeOutline, IoMailOutline } from "react-icons/io5";
-import { FaDollarSign } from "react-icons/fa";
-import { useState } from 'react';
+import { IoHomeOutline, IoMailOutline } from 'react-icons/io5';
+import { FaDollarSign } from 'react-icons/fa';
+import { useScroll } from '~/app/hooks/useScroll';
 
+import './styles.scss';
 
 const Menu = () => {
+  const scrollPosition = useScroll();
 
-const [isHomeHovered, setIsHomeHovered] = useState(false);
-const [isMoneyHovered, setIsMoneyHovered] = useState(false);
-const [isEmailHovered, setIsEmailHovered] = useState(false);
+  const windowsHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
+  const percentageScrolled = windowsHeight
+    ? (scrollPosition.y / windowsHeight) * 100
+    : 0;
+  const menuLeftPosition = Math.max(0, 50 - percentageScrolled);
 
-const homeIconClasses = `menu-container__icons-wrapper__icon ${isHomeHovered ? 'menu-container__icons-wrapper__icon--hovered' : ''}`;
-const moneyIconClasses = `menu-container__icons-wrapper__icon ${isMoneyHovered ? 'menu-container__icons-wrapper__icon--hovered' : ''}`;
-const emailIconClasses = `menu-container__icons-wrapper__icon ${isEmailHovered ? 'menu-container__icons-wrapper__icon--hovered' : ''}`;  
+  const menuContainerClasses =
+    menuLeftPosition < 45
+      ? 'menu-container'
+      : 'menu-container menu-container--centered';
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <nav className="menu-container">
+    <nav className={menuContainerClasses}>
       <div className="menu-container__icons-wrapper">
-        <IoHomeOutline className={homeIconClasses} onMouseEnter={() => setIsHomeHovered(true)} onMouseLeave={() => setIsHomeHovered(false)}/>
-        <FaDollarSign className={moneyIconClasses} onMouseEnter={() => setIsMoneyHovered(true)} onMouseLeave={() => setIsMoneyHovered(false)}/>
-        <IoMailOutline className={emailIconClasses} onMouseEnter={() => setIsEmailHovered(true)} onMouseLeave={() => setIsEmailHovered(false)}/>
-        
-        </div>
+        {/* <h5>E.D.I.T</h5> */}
+        <IoHomeOutline
+          className="menu-container__icons-wrapper__icon__home"
+          onClick={() => scrollToSection('home')}
+          title="Home"
+        />
+        <FaDollarSign
+          className="menu-container__icons-wrapper__icon__myself"
+          onClick={() => scrollToSection('myself')}
+          title="Myself"
+        />
+        <IoMailOutline
+          className="menu-container__icons-wrapper__icon__numbers"
+          onClick={() => scrollToSection('numbers')}
+          title="Numbers"
+        />{' '}
+        <IoMailOutline
+          className="menu-container__icons-wrapper__icon__services"
+          onClick={() => scrollToSection('services')}
+          title="Services"
+        />{' '}
+        <IoMailOutline
+          className="menu-container__icons-wrapper__icon__prices"
+          onClick={() => scrollToSection('prices')}
+          title="Prices"
+        />
+        <IoHomeOutline
+          className="menu-container__icons-wrapper__icon__contact"
+          onClick={() => scrollToSection('contact')}
+          title="Contact"
+        />
+      </div>
     </nav>
   );
-}
+};
 
-export default Menu 
+export default Menu;

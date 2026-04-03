@@ -1,26 +1,30 @@
 .section-container {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100dvh;
-    max-width:100%;
-    margin-inline:1rem;
-    background-color:grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: 1rem;
+  background-color: #2a2a2a;
 
-    @media screen and (min-width: 640px) {
+  @media screen and (min-width: 640px) {
     margin-inline: 2.5rem;
-}
+  }
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     margin-inline: 5rem;
-}
+  }
 
-@media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1024px) {
+    margin-inline: 7.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
     margin-inline: 10rem;
-}
+  }
 
-@media screen and (min-width: 1280px) {
-    margin-inline: 20rem;
-}
-
+  @media screen and (min-width: 1536px) {
+    margin-inline: auto;
+  }
 }
