@@ -1,11 +1,12 @@
+import HeroSection from './components/HeroSection/Hero';
 import Section from './components/Section/Section';
 import './styles.scss';
 
-const Home = () => {
+const Main = () => {
   return (
     <div className="page-container">
-      <Section id="home">
-        <h1>Home </h1>
+      <Section id="Main">
+        <HeroSection />
       </Section>
       <Section id="myself">
         <h1>Myself</h1>
@@ -26,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Main;
