@@ -9,6 +9,28 @@
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
+  margin-inline: 1rem;
+
+  @media screen and (min-width: 640px) {
+    margin-inline: 2.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-inline: 5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-inline: 7.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-inline: 10rem;
+  }
+
+  @media screen and (min-width: 1536px) {
+    margin-inline: auto;
+  }
+
   // display: flex;
   // flex: 1;
   // flex-direction: column;
@@ -16,6 +38,20 @@
   // justify-content: center;
   // font-family: var(--font-geist-sans);
   // background-color: var(--background);
+
+  &__title {
+    position: absolute;
+    top: 0;
+    right: 5;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    line-height: 0.9;
+    opacity: 30%;
+
+    @media screen and (min-width: 640px) {
+      font-size: 5rem;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -13,8 +13,14 @@ const HeroSection = () => {
         <h4 className="hero-section__text__sub">
           Curatrice de mots pour agences audacieuses, et marques visionnaires.
         </h4>
-        <button>Démarrer un projet </button>
-        <button>Voir le manifeste </button>
+        <div className="hero-section__text__buttons">
+          <button className="hero-section__text__buttons__button-1">
+            Démarrer un projet
+          </button>
+          <button className="hero-section__text__buttons__button-2">
+            Voir le manifeste
+          </button>
+        </div>
       </div>
       <div className="hero-section__picture">
         <Image

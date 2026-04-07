@@ -1,11 +1,12 @@
-import HeroSection from './components/HeroSection/Hero';
+import HeroSection from './components/HeroSection/HeroSection';
 import Section from './components/Section/Section';
 import './styles.scss';
 
 const Main = () => {
   return (
     <div className="page-container">
-      <Section id="Main">
+      <h1 className="page-container__title">E D I T .</h1>
+      <Section id="main">
         <HeroSection />
       </Section>
       <Section id="myself">
@@ -20,8 +21,8 @@ const Main = () => {
       <Section id="prices">
         <h1>Prices </h1>
       </Section>
-      <Section id="prices">
-        <h1>Prices </h1>
+      <Section id="contact">
+        <h1>Contact </h1>
       </Section>
     </div>
   );

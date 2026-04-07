@@ -32,8 +32,8 @@ const Menu = () => {
       <div className="menu-container__icons-wrapper">
         {/* <h5>E.D.I.T</h5> */}
         <IoHomeOutline
-          className="menu-container__icons-wrapper__icon__home"
-          onClick={() => scrollToSection('home')}
+          className="menu-container__icons-wrapper__icon__main"
+          onClick={() => scrollToSection('main')}
           title="Home"
         />
         <FaDollarSign
