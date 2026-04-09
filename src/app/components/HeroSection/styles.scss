@@ -26,11 +26,11 @@
 
     &__badge {
       background-color: #ff5ee8;
-      letter-spacing: 0.8rem;
+      letter-spacing: 0.6rem;
       color: #5b005b;
       padding: 0.5rem 1rem;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
       width: fit-content;
 
@@ -69,7 +69,7 @@
 
     &__buttons {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
 
       @media screen and (min-width: 640px) {
         column-gap: 2rem;
