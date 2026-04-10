@@ -9,13 +9,19 @@
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
   margin-inline: 1rem;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 1024px) {
     margin-inline: 2.5rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     margin-inline: 5rem;
   }
 
@@ -28,7 +34,7 @@
   }
 
   @media screen and (min-width: 1536px) {
-    margin-inline: auto;
+    margin-inline: 12rem;
   }
 
   // display: flex;
@@ -48,7 +54,7 @@
     line-height: 0.9;
     opacity: 30%;
 
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 1024px) {
       font-size: 5rem;
     }
   }

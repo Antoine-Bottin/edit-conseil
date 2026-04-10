@@ -1,10 +1,11 @@
 import HeroSection from './components/HeroSection/HeroSection';
+import NumberSection from './components/NumberSection/NumberSection';
 import Section from './components/Section/Section';
 import './styles.scss';
 
 const Main = () => {
   return (
-    <div className="page-container">
+    <div className="page-container h-screen overflow-y-scroll snap-y snap-mandatory">
       <h1 className="page-container__title">E D I T .</h1>
       <Section id="main">
         <HeroSection />
@@ -13,7 +14,7 @@ const Main = () => {
         <h1>Myself</h1>
       </Section>
       <Section id="numbers">
-        <h1>Numbers </h1>
+        <NumberSection />
       </Section>
       <Section id="services">
         <h1>Services </h1>

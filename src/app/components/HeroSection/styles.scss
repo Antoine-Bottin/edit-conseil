@@ -6,7 +6,7 @@
   align-items: center;
   gap: 2rem;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
     row-gap: 1rem;
     justify-content: space-between;
 
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 768px) {
       row-gap: 2rem;
       flex: 2;
     }
@@ -48,7 +48,7 @@
       text-transform: uppercase;
       line-height: 60px;
 
-      @media screen and (min-width: 640px) {
+      @media screen and (min-width: 769px) {
         font-size: 12rem;
         line-height: 120px;
       }
@@ -69,7 +69,7 @@
 
     &__buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
 
       @media screen and (min-width: 640px) {
         column-gap: 2rem;
@@ -78,7 +78,7 @@
 
       &__button-1,
       &__button-2 {
-        padding: 0.5rem 1rem;
+        padding: 1rem 2rem;
         font-family: 'Space Grotesk', sans-serif;
         font-weight: bold;
         font-size: 1.3rem;
@@ -124,8 +124,8 @@
       border-radius: 1rem;
     }
 
-    @media screen and (min-width: 640px) {
-      height: 60%;
+    @media screen and (min-width: 1024px) {
+      height: 80%;
 
       font-size: 3rem;
       margin-top: 1rem;

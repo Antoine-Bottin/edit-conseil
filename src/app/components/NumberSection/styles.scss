@@ -1,0 +1,15 @@
+.number-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4rem;
+  width: 100%;
+
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+  }
+}
