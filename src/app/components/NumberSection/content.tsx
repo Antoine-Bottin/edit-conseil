@@ -23,7 +23,7 @@ export const cardsContent: {
     description: 'livres de référence, (presque) constamment ouverts',
   },
   {
-    title: (start) => <CountUp end={Math.floor(Math.random() * 150) + 1} start={start ? 0 : undefined} preserveValue={true} redraw={false} />,
+    title: (start) => <CountUp end={Math.floor(Math.random() * (150 - 120 + 1)) + 120} start={start ? 0 : undefined} preserveValue={true} redraw={false} />,
     description: 'pages relues par semaine',
   },
 ];

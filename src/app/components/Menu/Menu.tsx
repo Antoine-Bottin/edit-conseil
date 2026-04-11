@@ -15,6 +15,8 @@ const Menu = () => {
     : 0;
   const menuLeftPosition = Math.max(0, 50 - percentageScrolled);
 
+  console.log(percentageScrolled);
+
   const menuContainerClasses =
     menuLeftPosition < 45
       ? 'menu-container'

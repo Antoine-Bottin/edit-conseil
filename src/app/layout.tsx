@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Newsreader, Space_Grotesk } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next"
 import Menu from './components/Menu/Menu';
 
 import './globals.css';
@@ -62,6 +63,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${spacegrotesk.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Analytics />
         <Menu />
         {children}
       </body>
