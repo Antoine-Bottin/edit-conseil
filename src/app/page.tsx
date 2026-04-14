@@ -1,6 +1,7 @@
 import HeroSection from './components/HeroSection/HeroSection';
 import NumberSection from './components/NumberSection/NumberSection';
 import Section from './components/Section/Section';
+import ServicesSection from './components/ServicesSection/ServicesSection';
 import './styles.scss';
 
 const Main = () => {
@@ -17,7 +18,7 @@ const Main = () => {
         <NumberSection />
       </Section>
       <Section id="services">
-        <h1>Services </h1>
+        <ServicesSection />
       </Section>
       <Section id="prices">
         <h1>Prices </h1>
