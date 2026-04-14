@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+
 import { Geist, Geist_Mono, Newsreader, Space_Grotesk } from 'next/font/google';
-import { Analytics } from "@vercel/analytics/next"
-import Menu from './components/Menu/Menu';
+import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
+import ScrollProvider from './components/ScrollProvider/ScrollProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,23 +30,11 @@ export const metadata: Metadata = {
   title: 'EDIT .',
   description: 'Conseil, écriture, relecture',
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
-  keywords: [
-    'web',
-    'developer',
-    'portfolio',
-    'Hélène Bottin',
-    'software ingeneer',
-    'reactJS',
-    'NextJs',
-    'NodeJs',
-    'TypeScript',
-    'JavaScript',
-    'HTML',
-  ],
+  keywords: ['conseil', 'écriture', 'relecture', 'Hélène Bottin'],
   metadataBase: new URL('https://www.portfolio.abottin.dev'),
   openGraph: {
-    title: 'Antoine Bottin - Portfolio ',
-    description: 'This is my dev portfolio',
+    title: 'Edit website ',
+    description: `Helene Bottin's professional website`,
     images: [{ url: '/assets/pictures/Photo_CV.jpg' }],
     type: 'website',
     url: 'https://www.portfolio.abottin.dev',
@@ -60,12 +49,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spacegrotesk.variable} ${newsreader.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${spacegrotesk.variable} ${newsreader.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <Analytics />
-        <Menu />
-        {children}
+        <ScrollProvider>{children}</ScrollProvider>{' '}
       </body>
     </html>
   );

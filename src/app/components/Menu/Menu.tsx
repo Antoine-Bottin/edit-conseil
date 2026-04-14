@@ -1,21 +1,23 @@
 'use client';
 
+
 import { IoHomeOutline, IoMailOutline } from 'react-icons/io5';
 import { FaDollarSign } from 'react-icons/fa';
 import { useScroll } from '~/app/hooks/useScroll';
 
 import './styles.scss';
 
-const Menu = () => {
-  const scrollPosition = useScroll();
+
+const Menu = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement | null> }) => {
+  const scrollPosition = useScroll(scrollRef);
+  console.log(scrollPosition)
 
   const windowsHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
+  
   const percentageScrolled = windowsHeight
     ? (scrollPosition.y / windowsHeight) * 100
     : 0;
   const menuLeftPosition = Math.max(0, 50 - percentageScrolled);
-
-  console.log(percentageScrolled);
 
   const menuContainerClasses =
     menuLeftPosition < 45
@@ -32,7 +34,6 @@ const Menu = () => {
   return (
     <nav className={menuContainerClasses}>
       <div className="menu-container__icons-wrapper">
-        {/* <h5>E.D.I.T</h5> */}
         <IoHomeOutline
           className="menu-container__icons-wrapper__icon__main"
           onClick={() => scrollToSection('main')}
