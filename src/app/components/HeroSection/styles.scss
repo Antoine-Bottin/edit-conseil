@@ -90,8 +90,15 @@
           font-size: 1.65rem;
         }
 
-        &:hover {
-          cursor: pointer;
+        @media (hover: hover) {
+          &:hover {
+            cursor: pointer;
+            filter: drop-shadow(5px 5px 10px white);
+            color: white;
+          }
+        }
+
+        &:active {
           filter: drop-shadow(5px 5px 10px white);
           color: white;
         }

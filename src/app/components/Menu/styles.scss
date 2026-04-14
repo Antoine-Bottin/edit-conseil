@@ -20,7 +20,13 @@
     height: 6rem;
   }
 
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      transition: all 0.2s;
+    }
+  }
+
+  &:active {
     transition: all 0.2s;
   }
 
@@ -38,7 +44,13 @@
       &__services,
       &__prices,
       &__contact {
-        &:hover {
+        @media (hover: hover) {
+          &:hover {
+            color: #6366f1;
+          }
+        }
+
+        &:active {
           color: #6366f1;
         }
       }
@@ -73,9 +85,15 @@
       &__services,
       &__prices,
       &__contact {
-        &:hover {
-          color: #ffabf3;
-          transition: all 0.2s;
+        @media (hover: hover) {
+          &:hover {
+            color: #ffabf3;
+            transition: all 0.2s;
+          }
+          &:active {
+            color: #ffabf3;
+            transition: all 0.2s;
+          }
         }
       }
     }
