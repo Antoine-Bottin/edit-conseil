@@ -1,11 +1,12 @@
 .number-section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
   width: 100%;
 
   @media screen and (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
   }
 
   @media screen and (min-width: 1024px) {
