@@ -1,0 +1,82 @@
+.services-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 2rem;
+  padding-block: 2rem;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  height: 22.5rem;
+  width: 80%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 30%;
+    height: 60rem;
+    padding: 4rem;
+    row-gap: 4rem;
+    min-width: 35rem;
+  }
+
+  &__top {
+    &__card-number {
+      font-size: clamp(1.5rem, 2vw, 3rem);
+      font-weight: bold;
+      font-family:
+        Space Grotesk,
+        sans-serif;
+
+      &#précision {
+        color: #ff5ee8;
+      }
+
+      &#adaptabilité {
+        color: #ff6bea;
+      }
+
+      &#rigueur {
+        color: #ff92ff;
+      }
+    }
+
+    &__card-title {
+      font-size: clamp(1.7rem, 2vw, 4rem);
+      text-transform: uppercase;
+      font-family:
+        Space Grotesk,
+        sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  &__card-description {
+    font-size: clamp(1.25rem, 2vw, 2.5rem);
+    font-family: 'Newsreader', serif;
+    color: #e5e2e1;
+    font-style: italic;
+  }
+
+  &__card-main-word {
+    border-top: 0.1rem solid #ff5ee8;
+    padding-top: 1rem;
+    width: 30%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family:
+      Space Grotesk,
+      sans-serif;
+
+    &#précision {
+      color: #cdabff;
+      border-color: #cdabff;
+    }
+    &#adaptabilité {
+      color: #c0c1ff;
+      border-color: #c0c1ff;
+    }
+    &#rigueur {
+      color: #8c00fe;
+      border-color: #8c00fe;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useInView } from 'react-intersection-observer';
-import Cards from '../NumberCards/NumberCards';
+import Cards from './NumberCards/NumberCards';
 import { cardsContent } from './content';
 
 import './styles.scss';

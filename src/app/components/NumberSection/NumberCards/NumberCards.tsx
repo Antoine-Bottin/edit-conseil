@@ -8,7 +8,7 @@ interface CardsProps {
 
 const Cards = ({ title, description }: CardsProps) => {
   return (
-    <div className="card-container">
+    <div className="number-cards-container">
       <h2>{title}</h2>
       <p>{description}</p>
     </div>
