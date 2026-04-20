@@ -5,8 +5,11 @@ import './styles.scss';
 const ServicesSection = () => {
   return (
     <div className="services-section">
-      <div className="services-section__title">Services </div>
-      <div className="services-section__title">Editos</div>
+      <div className="services-section__titles">
+        <div className="services-section__titles__title">Services </div>
+        <div className="services-section__titles__title">Editos</div>
+      </div>
+
       <div className="services-section__cards">
         {servicesCardsContent.map(
           ({ number, title, description, mainWord }, key) => (

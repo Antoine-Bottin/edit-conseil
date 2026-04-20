@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   row-gap: 2rem;
-  padding-block: 2rem;
   background-color: #1a1a1a;
   padding: 2rem;
   height: 22.5rem;
@@ -15,6 +14,13 @@
     padding: 4rem;
     row-gap: 4rem;
     min-width: 35rem;
+  }
+
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    height: 22.5rem;
+    padding: 2rem;
+    row-gap: 2rem;
+    min-width: 20rem;
   }
 
   &__top {
@@ -36,6 +42,10 @@
       &#rigueur {
         color: #ff92ff;
       }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 1.2rem;
+      }
     }
 
     &__card-title {
@@ -45,6 +55,10 @@
         Space Grotesk,
         sans-serif;
       font-weight: bold;
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -53,6 +67,10 @@
     font-family: 'Newsreader', serif;
     color: #e5e2e1;
     font-style: italic;
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      font-size: 1.25rem;
+    }
   }
 
   &__card-main-word {
@@ -77,6 +95,10 @@
     &#rigueur {
       color: #8c00fe;
       border-color: #8c00fe;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      font-size: 1rem;
     }
   }
 }
