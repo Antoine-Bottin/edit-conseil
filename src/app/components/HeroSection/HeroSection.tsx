@@ -24,7 +24,7 @@ const HeroSection = () => {
       </div>
       <div className="hero-section__picture">
         <Image
-          src="/assets/hero-picture.jpg"
+          src="/assets/HeleneBottin-light.jpg"
           fill={true}
           alt="Picture of the author"
         />
