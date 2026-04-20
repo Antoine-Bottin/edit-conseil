@@ -3,13 +3,13 @@ import dayjs from 'dayjs';
 import CountUp from 'react-countup';
 
 const weeklyReads: Record<number, { min: number; max: number }> = {
-  0: { min: 120, max: 150 }, // Sunday
-  1: { min: 120, max: 150 }, // Monday
-  2: { min: 120, max: 150 }, // Tuesday
-  3: { min: 120, max: 150 }, // Wednesday
-  4: { min: 120, max: 150 }, // Thursday
-  5: { min: 120, max: 150 }, // Friday
-  6: { min: 120, max: 150 }, // Saturday
+  0: { min: 64, max: 132 }, // Sunday
+  1: { min: 5, max: 14 }, // Monday
+  2: { min: 15, max: 31 }, // Tuesday
+  3: { min: 32, max: 47 }, // Wednesday
+  4: { min: 48, max: 63 }, // Thursday
+  5: { min: 64, max: 132 }, // Friday
+  6: { min: 64, max: 132 }, // Saturday
 };
 
 export const cardsContent: {
@@ -48,6 +48,6 @@ export const cardsContent: {
         redraw={false}
       />
     ),
-    description: 'pages relues par semaine',
+    description: 'pages relues cette semaine',
   },
 ];
