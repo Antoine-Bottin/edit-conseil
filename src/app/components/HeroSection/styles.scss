@@ -6,17 +6,17 @@
   align-items: center;
   gap: 2rem;
 
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   // Specific fix for mobile phones in landscape orientation
   @media screen and (orientation: landscape) and (max-height: 500px) {
     flex-direction: row;
     gap: 1rem;
     height: auto; // Allow scrolling if content is too tall
-  }
-
-  @media screen and (min-width: 1024px) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
   }
 
   &__text {
@@ -47,11 +47,11 @@
         font-size: 1.5rem;
       }
 
+      // Use landscape query to "undo" larger tablet/desktop scaling when height is tight
       @media screen and (orientation: landscape) and (max-height: 500px) {
-        padding: 0.5rem 1rem;
-        font-weight: bold;
         font-size: 1.1rem;
         letter-spacing: 0.6rem;
+        padding: 0.5rem 1rem;
       }
     }
 
