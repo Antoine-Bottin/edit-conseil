@@ -5,8 +5,7 @@
   row-gap: 2rem;
   background-color: #1a1a1a;
   padding: 2rem;
-  height: 22.5rem;
-  width: 80%;
+  height: fit-content;
 
   @media screen and (min-width: 768px) {
     max-width: 30%;
@@ -88,10 +87,12 @@
       color: #cdabff;
       border-color: #cdabff;
     }
+    
     &#adaptabilité {
       color: #c0c1ff;
       border-color: #c0c1ff;
     }
+
     &#rigueur {
       color: #8c00fe;
       border-color: #8c00fe;

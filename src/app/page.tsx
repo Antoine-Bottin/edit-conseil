@@ -1,3 +1,4 @@
+import ContactSection from './components/ContactSection/ContactSection';
 import HeroSection from './components/HeroSection/HeroSection';
 import NumberSection from './components/NumberSection/NumberSection';
 import Section from './components/Section/Section';
@@ -24,7 +25,7 @@ const Main = () => {
         <h1>Prices </h1>
       </Section>
       <Section id="contact">
-        <h1>Contact </h1>
+        <ContactSection />
       </Section>
     </div>
   );

@@ -1,19 +1,21 @@
 'use client';
 
-
 import { IoHomeOutline, IoMailOutline } from 'react-icons/io5';
 import { FaDollarSign } from 'react-icons/fa';
 import { useScroll } from '~/app/hooks/useScroll';
 
 import './styles.scss';
+import { scrollToSection } from '~/app/utils/scroll';
 
-
-const Menu = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement | null> }) => {
+const Menu = ({
+  scrollRef,
+}: {
+  scrollRef: React.RefObject<HTMLDivElement | null>;
+}) => {
   const scrollPosition = useScroll(scrollRef);
-  console.log(scrollPosition)
 
   const windowsHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
-  
+
   const percentageScrolled = windowsHeight
     ? (scrollPosition.y / windowsHeight) * 100
     : 0;
@@ -23,13 +25,6 @@ const Menu = ({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement | null>
     menuLeftPosition < 45
       ? 'menu-container'
       : 'menu-container menu-container--centered';
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <nav className={menuContainerClasses}>

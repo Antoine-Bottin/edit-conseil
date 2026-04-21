@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 
 import './styles.scss';
+import { scrollToSection } from '~/app/utils/scroll';
 
 const HeroSection = () => {
   return (
@@ -14,7 +17,10 @@ const HeroSection = () => {
           Curatrice de mots pour agences audacieuses, et marques visionnaires.
         </h4>
         <div className="hero-section__text__buttons">
-          <button className="hero-section__text__buttons__button-1">
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="hero-section__text__buttons__button-1"
+          >
             Démarrer un projet
           </button>
           <button className="hero-section__text__buttons__button-2">
@@ -26,7 +32,7 @@ const HeroSection = () => {
         <Image
           src="/assets/HeleneBottin-light.jpg"
           fill={true}
-          alt="Picture of the author"
+          alt="Helene Bottin's picture"
         />
       </div>
     </div>
