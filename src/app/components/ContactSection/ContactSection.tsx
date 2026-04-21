@@ -11,6 +11,7 @@ async function handleForm(prevState: FormState | null, formData: FormData) {
   const data = {
     email: formData.get('email'),
     message: formData.get('message'),
+    name: formData.get('name'),
   };
 
   const response = await fetch('/api/send-mail', {
@@ -26,8 +27,6 @@ async function handleForm(prevState: FormState | null, formData: FormData) {
 const ContactSection = () => {
   const [state, formAction, isPending] = useActionState(handleForm, null);
 
-  console.log(state);
-
   return (
     <div className="contact-section">
       <div className="contact-section__presentation">
@@ -40,7 +39,7 @@ const ContactSection = () => {
       </div>
       <div className="contact-section__form">
         <form action={formAction}>
-          <input type="text" placeholder="Nom /Entreprise" name="nom" />
+          <input type="text" placeholder="Nom / Entreprise" name="name" />
           <input type="text" placeholder="Email de contact" name="email" />
           <textarea placeholder="Votre message" name="message" />
           <button type="submit" disabled={isPending}>

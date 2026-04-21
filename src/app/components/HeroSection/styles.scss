@@ -5,11 +5,13 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  padding-block: 6rem;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-block: 12rem;
   }
 
   // Specific fix for mobile phones in landscape orientation
