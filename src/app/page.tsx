@@ -1,6 +1,8 @@
 import ContactSection from './components/ContactSection/ContactSection';
 import HeroSection from './components/HeroSection/HeroSection';
+import MyselfSection from './components/MyselfSection/MyselfSection';
 import NumberSection from './components/NumberSection/NumberSection';
+import QuoteSection from './components/QuoteSection/QuoteSection';
 import Section from './components/Section/Section';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 import './styles.scss';
@@ -13,7 +15,10 @@ const Main = () => {
         <HeroSection />
       </Section>
       <Section id="myself">
-        <h1>Myself</h1>
+        <MyselfSection />
+      </Section>
+      <Section id="quote">
+        <QuoteSection />
       </Section>
       <Section id="numbers">
         <NumberSection />

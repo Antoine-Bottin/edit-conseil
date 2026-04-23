@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/app/components/HeroSection/HeroSection.tsx"
-  ],
+, "src/app/components/QuoteSection/styles.sass"  ],
   "exclude": ["node_modules"]
 }

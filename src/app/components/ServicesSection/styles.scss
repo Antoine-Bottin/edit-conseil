@@ -1,5 +1,5 @@
 .services-section {
-  min-height: 100dvh;
+  height: var(--content-height, 100%);
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
