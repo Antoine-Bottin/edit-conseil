@@ -1,17 +1,15 @@
 .hero-section {
-  height: calc(100dvh - 2rem);
+  height: var(--content-height, 100%);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-block: 6rem;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-block: 12rem;
   }
 
   // Specific fix for mobile phones in landscape orientation
@@ -107,7 +105,7 @@
         padding: 1rem 2rem;
         font-family: 'Space Grotesk', sans-serif;
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         text-transform: uppercase;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -155,19 +153,11 @@
     flex: 1;
     width: 100%;
     position: relative;
+    height: var(--content-height, 100%);
 
     img {
       object-fit: cover;
       border-radius: 1rem;
-    }
-
-    @media screen and (orientation: landscape) and (max-height: 500px) {
-      height: 80dvh;
-    }
-
-    @media screen and (min-width: 1024px) {
-      height: 80%;
-      margin-top: 1rem;
     }
   }
 }

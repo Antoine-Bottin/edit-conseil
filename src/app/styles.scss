@@ -9,7 +9,7 @@
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
-  margin-inline: 1rem;
+  margin-inline: 2.5rem;
 
   @media screen and (min-width: 1024px) {
     margin-inline: 7.5rem;
@@ -22,14 +22,6 @@
   @media screen and (min-width: 1536px) {
     margin-inline: 12rem;
   }
-
-  // display: flex;
-  // flex: 1;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // font-family: var(--font-geist-sans);
-  // background-color: var(--background);
 
   &__title {
     position: absolute;

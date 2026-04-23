@@ -32,6 +32,9 @@ export async function POST(request: Request) {
 
     return Response.json(data);
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return Response.json(
+      { error: error.message || 'Internal Server Error' },
+      { status: 500 },
+    );
   }
 }

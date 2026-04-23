@@ -10,11 +10,14 @@ const HeroSection = () => {
     <div className="hero-section">
       <div className="hero-section__text">
         <div className="hero-section__text__badge">Artisan du doute</div>
-        <h1 className="hero-section__text__main">
-          Douter de tout, surtout de ce que l&apos;on croit savoir
-        </h1>
+        <h1 className="hero-section__text__main">Hélène Bottin</h1>
         <h4 className="hero-section__text__sub">
-          Curatrice de mots pour agences audacieuses, et marques visionnaires.
+          Relectrice-correctrice, secrétaire de rédaction, rewriter et
+          conseiller littéraire et éditorial.
+          <br />
+          <br />
+          Je vous aide à trouver le mot juste pour des communications
+          cohérentes, lisibles et adaptées à leur audience.
         </h4>
         <div className="hero-section__text__buttons">
           <button
@@ -31,8 +34,9 @@ const HeroSection = () => {
       <div className="hero-section__picture">
         <Image
           src="/assets/HeleneBottin-light.jpg"
-          fill={true}
+          fill
           alt="Helene Bottin's picture"
+          preload
         />
       </div>
     </div>
