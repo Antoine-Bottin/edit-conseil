@@ -3,17 +3,21 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-block: 6rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    column-gap: 8rem;
-    padding-block: 12rem;
   }
 
   &__presentation {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 1rem;
     flex: 1;
+
+    @media screen and (min-width: 768px) {
+      flex: 2;
+    }
 
     &__main {
       font-size: 6rem;
@@ -26,10 +30,14 @@
       @media screen and (min-width: 768px) {
         font-size: 12rem;
       }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 6rem;
+      }
     }
 
     &__sub {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-family: Newsreader, serif;
       font-style: italic;
       color: #e5e2e1;
@@ -37,18 +45,18 @@
       @media screen and (min-width: 768px) {
         font-size: 3rem;
       }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 2rem;
+      }
     }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex: 1;
-    border-left: 1rem solid #ff92ff;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    box-shadow: -10px 0 15px -10px #ffabf3;
     row-gap: 2rem;
     background-color: #201f1f;
 
@@ -62,9 +70,16 @@
       text-transform: uppercase;
       padding-left: 3rem;
       border-bottom: 0.2rem solid #464555;
-      height: 10rem;
       width: 100%;
-      font-size: 3rem;
+      font-size: 2rem;
+
+      @media screen and (min-width: 768px) {
+        font-size: 4rem;
+      }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 2rem;
+      }
 
       &:focus {
         outline: none;
@@ -73,10 +88,17 @@
 
     textarea {
       resize: none;
-      height: 20rem;
+
+      @media screen and (min-width: 768px) {
+        height: 20rem;
+      }
 
       &::placeholder {
-        padding-top: 7.5rem;
+        padding-top: 25%;
+
+        @media screen and (min-width: 768px) {
+          padding-top: 7.5rem;
+        }
       }
     }
   }

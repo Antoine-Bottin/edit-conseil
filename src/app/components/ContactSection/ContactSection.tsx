@@ -31,7 +31,7 @@ const ContactSection = () => {
     <div className="contact-section">
       <div className="contact-section__presentation">
         <div className="contact-section__presentation__main">Contacter</div>
-        <div className="contact-section__presentation__main">EDIT</div>
+        <div className="contact-section__presentation__main">EDIT .</div>
         <p className="contact-section__presentation__sub">
           Prêt à élever votre discours? Discutons de votre prochain projet
           éditorial

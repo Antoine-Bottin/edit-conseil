@@ -5,6 +5,7 @@ import NumberSection from './components/NumberSection/NumberSection';
 import QuoteSection from './components/QuoteSection/QuoteSection';
 import Section from './components/Section/Section';
 import ServicesSection from './components/ServicesSection/ServicesSection';
+
 import './styles.scss';
 
 const Main = () => {
