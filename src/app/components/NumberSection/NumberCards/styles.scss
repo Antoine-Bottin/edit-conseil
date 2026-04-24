@@ -43,7 +43,7 @@
   }
 
   h2 {
-    font-size: 5rem;
+    font-size: var(--main-title);
     font-weight: bold;
     background-image: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
     color: transparent;
@@ -51,7 +51,7 @@
     transition: font-size 0.2s ease;
 
     @media screen and (min-width: 640px) {
-      font-size: 10rem;
+      font-size: var(--main-title);
     }
 
     @media screen and (orientation: landscape) and (max-height: 500px) {

@@ -6,8 +6,7 @@ interface FormState {
   success: boolean;
 }
 
-async function handleForm(prevState: FormState | null, formData: FormData) {
-  console.log(prevState, formData);
+async function handleForm(__prevState: FormState | null, formData: FormData) {
   const data = {
     email: formData.get('email'),
     message: formData.get('message'),
@@ -25,13 +24,16 @@ async function handleForm(prevState: FormState | null, formData: FormData) {
 }
 
 const ContactSection = () => {
-  const [state, formAction, isPending] = useActionState(handleForm, null);
-
+  const [state, formAction, isPending] = useActionState(handleForm, {
+    success: false,
+  });
   return (
     <div className="contact-section">
       <div className="contact-section__presentation">
-        <div className="contact-section__presentation__main">Contacter</div>
-        <div className="contact-section__presentation__main">EDIT .</div>
+        <div className="contact-section__presentation__main">
+          Contacter <br />
+          EDIT.
+        </div>
         <p className="contact-section__presentation__sub">
           Prêt à élever votre discours? Discutons de votre prochain projet
           éditorial
@@ -39,11 +41,16 @@ const ContactSection = () => {
       </div>
       <div className="contact-section__form">
         <form action={formAction}>
-          <input type="text" placeholder="Nom / Entreprise" name="name" />
-          <input type="text" placeholder="Email de contact" name="email" />
-          <textarea placeholder="Votre message" name="message" />
+          <input type="text" placeholder="Nom" name="name" required />
+          <input
+            type="text"
+            placeholder="E-mail de contact"
+            name="email"
+            required
+          />
+          <textarea placeholder="Votre message" name="message" required />
           <button type="submit" disabled={isPending}>
-            {isPending ? 'Envoi...' : 'Envoyer'}
+            {isPending ? 'Envoi...' : 'Envoyer  votre message'}
           </button>
           {state?.success && <p>Bien reçu !</p>}
         </form>

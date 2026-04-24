@@ -16,7 +16,7 @@
   }
 
   @media screen and (orientation: landscape) and (max-height: 500px) {
-    height: 22.5rem;
+    height: fit-content;
     padding: 2rem;
     row-gap: 2rem;
     min-width: 20rem;
@@ -87,7 +87,7 @@
       color: #cdabff;
       border-color: #cdabff;
     }
-    
+
     &#adaptabilité {
       color: #c0c1ff;
       border-color: #c0c1ff;

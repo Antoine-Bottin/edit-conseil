@@ -1,12 +1,11 @@
 .quote-section {
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - 2 * var(--section-padding));
+  height: calc(
+    100dvh - var(--section-padding-bottom) - var(--section-padding-top)
+  );
   width: 100%;
   column-gap: 4rem;
-
-  @media screen and (orientation: landscape) and (max-height: 500px) {
-  }
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -15,7 +14,7 @@
   &__title {
     display: flex;
     flex: 1;
-    font-size: 5rem;
+    font-size: var(--main-title);
     font-family: 'Newsreader', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -27,7 +26,7 @@
     text-align: center;
 
     @media screen and (min-width: 769px) {
-      font-size: 12rem;
+      font-size: var(--main-title);
       line-height: 120px;
       text-align: left;
       align-items: center;

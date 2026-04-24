@@ -1,22 +1,35 @@
 .contact-section {
   height: var(--content-height, 100%);
-  width: 100%;
   display: flex;
+  align-items: start;
   flex-direction: column;
+  row-gap: 3rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    align-items: center;
+  }
+
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    flex-direction: column;
+    column-gap: 1rem;
   }
 
   &__presentation {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     row-gap: 1rem;
     flex: 1;
 
     @media screen and (min-width: 768px) {
-      flex: 2;
+      flex: 1;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      width: 50%;
     }
 
     &__main {
@@ -55,10 +68,23 @@
   &__form {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    box-shadow: -10px 0 15px -10px #ffabf3;
+    height: fit-content;
+    border: solid 0.1rem #ffabf3;
     row-gap: 2rem;
     background-color: #201f1f;
+    padding: 2rem;
+
+    @media screen and (min-width: 768px) {
+      min-width: 50rem;
+      padding: 4rem;
+      flex: 1;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      min-width: unset;
+      padding: 1.5rem;
+      width: 40%;
+    }
 
     input,
     textarea {
@@ -67,14 +93,13 @@
         Space Grotesk,
         sans-serif;
       border: none;
-      text-transform: uppercase;
-      padding-left: 3rem;
+      padding-block: 1rem;
       border-bottom: 0.2rem solid #464555;
       width: 100%;
       font-size: 2rem;
 
       @media screen and (min-width: 768px) {
-        font-size: 4rem;
+        font-size: 3rem;
       }
 
       @media screen and (orientation: landscape) and (max-height: 500px) {
@@ -84,21 +109,70 @@
       &:focus {
         outline: none;
       }
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
     }
 
     textarea {
       resize: none;
+      padding: 1rem;
+      height: 20rem;
 
       @media screen and (min-width: 768px) {
         height: 20rem;
+      }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        height: 12rem;
+        padding: unset;
       }
 
       &::placeholder {
         padding-top: 25%;
 
         @media screen and (min-width: 768px) {
-          padding-top: 7.5rem;
+          padding-top: 7%;
         }
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      color: #5b005b;
+      background-color: transparent;
+      border: 2px solid #5b005b;
+      width: 100%;
+      margin-top: 2rem;
+
+      @media screen and (min-width: 640px) {
+        padding: 2rem 4rem;
+        font-size: 1.65rem;
+      }
+
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        padding: 1rem 2rem;
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          filter: drop-shadow(5px 5px 10px white);
+          color: white;
+        }
+      }
+
+      &:active {
+        filter: drop-shadow(5px 5px 10px white);
+        color: white;
       }
     }
   }

@@ -1,21 +1,26 @@
 .section-container {
-  --section-padding: 4rem;
-  --content-height: calc(100dvh - 2 * var(--section-padding));
+  // CSS variables for calculation
+  --section-padding-top: 5rem;
+  --section-padding-bottom: 7rem;
+
+  // Responsive one
+  @media screen and (min-width: 1024px) {
+    --section-padding-top: 10rem;
+    --section-padding-bottom: 14rem;
+  }
+
+  //Calculation of the oontent height variable if needed
+  --content-height: calc(
+    100dvh - (var(--section-padding-top) + var(--section-padding-bottom))
+  );
 
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: var(--content-height);
+  min-height: 100dvh;
   width: 100%;
-  padding-block: var(--section-padding);
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+  box-sizing: border-box;
   scroll-snap-align: start;
-
-  @media screen and (orientation: landscape) and (max-height: 500px) {
-    min-height: var(--content-height);
-  }
-
-  @media screen and (min-width: 1024px) {
-    --section-padding: 8rem;
-    --content-height: calc(100dvh - 2 * var(--section-padding));
-  }
 }
