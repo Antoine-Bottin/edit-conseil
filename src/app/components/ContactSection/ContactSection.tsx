@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -43,10 +43,18 @@ async function handleForm(__prevState: FormState | null, formData: FormData) {
 }
 
 const ContactSection = () => {
-  const [__state, formAction, isPending] = useActionState(handleForm, {
+  const formRef = useRef<HTMLFormElement>(null); // Pour cibler le formulaire
+
+  const [state, formAction, isPending] = useActionState(handleForm, {
     success: false,
     error: null,
   });
+
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+    }
+  }, [state.success]);
 
   return (
     <div className="contact-section">
@@ -61,7 +69,7 @@ const ContactSection = () => {
         </p>
       </div>
       <div className="contact-section__form">
-        <form action={formAction}>
+        <form action={formAction} ref={formRef}>
           <input type="text" placeholder="Nom" name="name" required />
           <input
             type="email"
@@ -73,21 +81,6 @@ const ContactSection = () => {
           <button className="send-button" type="submit" disabled={isPending}>
             {isPending ? 'Envoi...' : 'Envoyer  votre message'}
           </button>
-          <ToastContainer
-            position="bottom-center"
-            limit={2}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable={false}
-            pauseOnHover
-            theme="colored"
-            style={{ fontSize: '15px' }}
-            // transition={Bounce}
-          />
-          {/* {state?.success && <p>Bien reçu !</p>} */}
         </form>
       </div>
     </div>

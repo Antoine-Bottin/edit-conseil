@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
 import ScrollProvider from './components/ScrollProvider/ScrollProvider';
+import { ToastContainer } from 'react-toastify';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -53,6 +54,20 @@ export default function RootLayout({
     >
       <body>
         <Analytics />
+        <ToastContainer
+          position="bottom-center"
+          limit={2}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable={false}
+          pauseOnHover
+          theme="colored"
+          style={{ fontSize: '15px' }}
+          // transition={Bounce}
+        />
         <ScrollProvider>{children}</ScrollProvider>{' '}
       </body>
     </html>
