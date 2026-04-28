@@ -1,9 +1,14 @@
 'use client';
+
 import { useActionState } from 'react';
+
+import { ToastContainer, toast } from 'react-toastify';
+
 import './styles.scss';
 
 interface FormState {
   success: boolean;
+  error: string | null;
 }
 
 async function handleForm(__prevState: FormState | null, formData: FormData) {
@@ -13,20 +18,36 @@ async function handleForm(__prevState: FormState | null, formData: FormData) {
     name: formData.get('name'),
   };
 
-  const response = await fetch('/api/send-mail', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  });
+  try {
+    const response = await fetch('/api/send-mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Indispensable pour que l'API reçoive le JSON
+      },
+      body: JSON.stringify(data),
+    });
 
-  if (!response.ok) throw new Error("Échec de l'envoi");
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Erreur API:', errorData);
+      toast.error("Erreur lors de l'envoi");
+      return { success: false, error: "Erreur lors de l'envoi" };
+    }
 
-  return { success: true };
+    toast.success('Message envoyé avec succès');
+    return { success: true, error: null };
+  } catch (e) {
+    console.error('Erreur réseau:', e);
+    return { success: false, error: 'Connexion impossible' };
+  }
 }
 
 const ContactSection = () => {
-  const [state, formAction, isPending] = useActionState(handleForm, {
+  const [__state, formAction, isPending] = useActionState(handleForm, {
     success: false,
+    error: null,
   });
+
   return (
     <div className="contact-section">
       <div className="contact-section__presentation">
@@ -43,16 +64,30 @@ const ContactSection = () => {
         <form action={formAction}>
           <input type="text" placeholder="Nom" name="name" required />
           <input
-            type="text"
+            type="email"
             placeholder="E-mail de contact"
             name="email"
             required
           />
           <textarea placeholder="Votre message" name="message" required />
-          <button type="submit" disabled={isPending}>
+          <button className="send-button" type="submit" disabled={isPending}>
             {isPending ? 'Envoi...' : 'Envoyer  votre message'}
           </button>
-          {state?.success && <p>Bien reçu !</p>}
+          <ToastContainer
+            position="bottom-center"
+            limit={2}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable={false}
+            pauseOnHover
+            theme="colored"
+            style={{ fontSize: '15px' }}
+            // transition={Bounce}
+          />
+          {/* {state?.success && <p>Bien reçu !</p>} */}
         </form>
       </div>
     </div>

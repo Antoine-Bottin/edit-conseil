@@ -1,16 +1,13 @@
 import { Resend } from 'resend';
 
-// On force la route en mode dynamique pour éviter l'erreur de build Vercel
 export const dynamic = 'force-dynamic';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
-  // Ajout d'un try/catch global pour attraper les erreurs de JSON mal formé
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const { email, message, name } = await request.json();
 
-    // Validation minimale pour éviter d'envoyer des mails vides
     if (!email || !message) {
       return Response.json(
         { error: 'Email et message requis' },
@@ -22,8 +19,8 @@ export async function POST(request: Request) {
       from: 'Antoine Bottin <antoine@contact.abottin.dev>',
       to: 'a.bottin.dev@gmail.com',
       subject: `Message de ${name}`,
-      html: `<p>${message}</p>`, // Il est préférable d'envelopper dans une balise HTML
-      replyTo: email, // Corrigé : avec l'underscore _
+      html: `<p>${message}</p>`,
+      replyTo: email,
     });
 
     if (error) {
