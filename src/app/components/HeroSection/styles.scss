@@ -8,17 +8,15 @@
   row-gap: 2rem;
   gap: 2rem;
 
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
   @media screen and (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-  }
-
-  // Specific fix for mobile phones in landscape orientation
-  @media screen and (orientation: landscape) and (max-height: 500px) {
-    flex-direction: row;
-    gap: 1rem;
-    height: auto; // Allow scrolling if content is too tall
   }
 
   &__text {
@@ -28,7 +26,7 @@
     row-gap: 1rem;
     justify-content: space-between;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       row-gap: 2rem;
       flex: 2;
     }
@@ -43,13 +41,12 @@
       text-transform: uppercase;
       width: fit-content;
 
-      @media screen and (min-width: 640px) {
+      @media screen and (min-width: 1024px) {
         padding: 1rem 2rem;
         letter-spacing: 1rem;
         font-size: 1.5rem;
       }
 
-      // Use landscape query to "undo" larger tablet/desktop scaling when height is tight
       @media screen and (orientation: landscape) and (max-height: 500px) {
         font-size: 1.1rem;
         letter-spacing: 0.6rem;
@@ -64,15 +61,19 @@
       text-transform: uppercase;
       line-height: 60px;
 
-      @media screen and (min-width: 769px) {
-        font-size: var(--main-title);
-        line-height: 120px;
-      }
-
       @media screen and (orientation: landscape) and (max-height: 500px) {
         font-size: 3.5rem;
-        line-height: 50px;
       }
+
+      @media screen and (min-width: 768px) and (min-height: 501px) {
+        font-size: var(--main-title);
+        line-height: 12rem;
+      }
+
+      // @media screen and (min-width: 1024px) {
+      //   font-size: var(--main-title);
+      //   line-height: 120px;
+      // }
     }
 
     &__sub {
@@ -82,22 +83,27 @@
       font-style: italic;
       font-weight: 200;
 
-      @media screen and (min-width: 640px) {
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        font-size: 1.7rem;
+        line-height: normal;
+      }
+
+      @media screen and (min-width: 768px) and (min-height: 501px) {
         font-size: 3rem;
         margin-top: 1rem;
       }
 
-      @media screen and (orientation: landscape) and (max-height: 500px) {
-        font-size: 2rem;
-        line-height: normal;
-      }
+      // @media screen and (min-width: 1024px) {
+      //   font-size: 3rem;
+      //   margin-top: 1rem;
+      // }
     }
 
     &__buttons {
       display: flex;
       justify-content: space-around;
 
-      @media screen and (min-width: 640px) {
+      @media screen and (min-width: 1024px) {
         column-gap: 2rem;
         justify-content: unset;
       }
@@ -111,15 +117,20 @@
         text-transform: uppercase;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-        @media screen and (min-width: 640px) {
-          padding: 2rem 4rem;
-          font-size: 1.65rem;
-        }
-
         @media screen and (orientation: landscape) and (max-height: 500px) {
           padding: 1rem 2rem;
           font-weight: bold;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
+        }
+
+        @media screen and (min-width: 768px) and (min-height: 501px) {
+          padding: 1.5rem 3rem;
+          font-size: 1.4rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+          padding: 2rem 4rem;
+          font-size: 1.65rem;
         }
 
         @media (hover: hover) {
@@ -155,16 +166,15 @@
     flex: 1;
     width: 100%;
     position: relative;
-    min-height: 300px; // Ensure it has a minimum height on mobile
+    min-height: 20rem;
 
-    // Only use 100% height when the parent has a fixed height (landscape/desktop)
     @media screen and (min-width: 1024px) {
       height: 80dvh;
     }
 
     img {
-      width: 100%; // Critical: make sure the image fills the container
-      height: 100%; // Critical: make sure the image fills the container
+      // width: 100%; // Critical: make sure the image fills the container
+      // height: 100%; // Critical: make sure the image fills the container
       object-fit: cover;
       border-radius: 1rem;
     }

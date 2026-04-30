@@ -32,10 +32,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --main-title:5rem;
+  --main-title:4rem;
 
-    @media screen and (min-width: 1024px) {
-  --main-title:10rem;
+    @media screen and (min-width: 768px) {
+  --main-title:6rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+  --main-title:8rem;
   }
 }
 
