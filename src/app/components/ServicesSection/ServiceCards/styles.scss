@@ -10,6 +10,7 @@
   @media screen and (min-width: 768px) {
     max-width: 30%;
     height: 60rem;
+    height: min(35rem, 60rem);
     padding: 4rem;
     row-gap: 4rem;
     min-width: 35rem;

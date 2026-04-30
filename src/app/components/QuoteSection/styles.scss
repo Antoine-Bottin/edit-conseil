@@ -1,9 +1,7 @@
 .quote-section {
   display: flex;
   flex-direction: column;
-  height: calc(
-    100dvh - var(--section-padding-bottom) - var(--section-padding-top)
-  );
+  height: var(--content-height, 100%);
   width: 100%;
   column-gap: 4rem;
 
