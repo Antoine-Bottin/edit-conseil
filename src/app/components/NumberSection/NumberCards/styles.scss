@@ -31,15 +31,15 @@
     border-color: #ffabf3;
   }
 
-  @media screen and (min-width: 1024px) {
-    height: 20rem;
-    width: 60rem;
-  }
-
   @media screen and (orientation: landscape) and (max-height: 500px) {
     padding: 0.5rem;
-    height: 10rem;
-    width: 32rem;
+    height: 9rem;
+    width: 20rem;
+  }
+
+  @media screen and (min-width: 1024px) and (min-height: 501px) {
+    height: 20rem;
+    width: 60rem;
   }
 
   h2 {

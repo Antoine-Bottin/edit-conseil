@@ -84,7 +84,7 @@
       font-weight: 200;
 
       @media screen and (orientation: landscape) and (max-height: 500px) {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         line-height: normal;
       }
 
@@ -118,7 +118,7 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         @media screen and (orientation: landscape) and (max-height: 500px) {
-          padding: 1rem 2rem;
+          padding: 0.5rem 1rem;
           font-weight: bold;
           font-size: 1.2rem;
         }

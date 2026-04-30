@@ -5,8 +5,9 @@
   width: 100%;
   column-gap: 4rem;
 
-  @media screen and (min-width: 1024px) {
-    flex-direction: row;
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    font-size: 3.5rem;
+    line-height: 50px;
   }
 
   &__title {
@@ -23,16 +24,16 @@
     background-clip: text;
     text-align: center;
 
-    @media screen and (min-width: 769px) {
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      font-size: 3.5rem;
+      line-height: 50px;
+    }
+
+    @media screen and (min-width: 769px) and (min-height: 501px) {
       font-size: var(--main-title);
       line-height: 120px;
       text-align: left;
       align-items: center;
-    }
-
-    @media screen and (orientation: landscape) and (max-height: 500px) {
-      font-size: 3.5rem;
-      line-height: 50px;
     }
   }
 
