@@ -34,13 +34,21 @@ body {
 
   --main-title:4rem;
 
-    @media screen and (min-width: 768px) {
-  --main-title:6rem;
-  }
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      --main-title: 4rem;
+    }
 
-  @media screen and (min-width: 1024px) {
-  --main-title:8rem;
-  }
+    @media screen and (min-width: 769px) and (min-height: 501px) {
+      --main-title: 4rem;
+    }
+
+    @media screen and (min-width: 1025px) and (min-height: 501px) {
+      --main-title:6rem;
+    }
+
+    @media screen and (min-width: 1441px) and (min-height: 501px){
+      --main-title:8rem;
+    }
 }
 
 * {

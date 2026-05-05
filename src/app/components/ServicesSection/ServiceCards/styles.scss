@@ -2,26 +2,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 2rem;
+  row-gap: 3rem;
   background-color: #1a1a1a;
   padding: 2rem;
   width: 100%;
   height: fit-content;
-
-  @media screen and (min-width: 1024px) {
-    max-width: 30%;
-    height: 60rem;
-    height: min(35rem, 60rem);
-    padding: 4rem;
-    row-gap: 4rem;
-    min-width: 35rem;
-  }
 
   @media screen and (orientation: landscape) and (max-height: 500px) {
     height: fit-content;
     padding: 2rem;
     row-gap: 2rem;
     min-width: 20rem;
+  }
+
+  @media screen and (min-width: 769px) and (min-height: 501px) {
+    max-width: 30%;
+    height: 35rem;
+    padding: 4rem;
+    row-gap: 4rem;
+    column-gap: 4rem;
+    min-width: 35rem;
+  }
+
+  @media screen and (min-width: 1024px) and (min-height: 501px) {
+    height: 50rem;
+    max-width: 30%;
+    padding: 4rem;
+  }
+
+  @media screen and (min-width: 1441px) and (min-height: 501px) {
+    height: 50rem;
+    max-width: 30%;
+    padding: 4rem;
   }
 
   &__top {

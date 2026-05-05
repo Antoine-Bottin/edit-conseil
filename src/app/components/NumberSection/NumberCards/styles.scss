@@ -37,7 +37,17 @@
     width: 20rem;
   }
 
-  @media screen and (min-width: 1024px) and (min-height: 501px) {
+  @media screen and (min-width: 769px) and (min-height: 501px) {
+    height: 10rem;
+    width: 60rem;
+  }
+
+  @media screen and (min-width: 1025px) and (min-height: 501px) {
+    height: 15rem;
+    width: 60rem;
+  }
+
+  @media screen and (min-width: 1441px) and (min-height: 501px) {
     height: 20rem;
     width: 60rem;
   }
@@ -50,12 +60,16 @@
     background-clip: text;
     transition: font-size 0.2s ease;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (orientation: landscape) and (max-height: 500px) {
       font-size: var(--main-title);
     }
 
-    @media screen and (orientation: landscape) and (max-height: 500px) {
-      font-size: 4rem; // Force smaller size on short screens
+    @media screen and (min-width: 769px) and (min-height: 501px) {
+      font-size: var(--main-title);
+    }
+
+    @media screen and (min-width: 1025px) {
+      font-size: var(--main-title);
     }
   }
 
