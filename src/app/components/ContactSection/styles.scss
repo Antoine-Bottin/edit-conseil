@@ -57,51 +57,58 @@
       flex: 1;
     }
 
-    label {
-      font-family: var(--font-mono, monospace);
-      font-size: 1.5rem;
-      color: #ffabf3;
-      text-transform: uppercase;
-    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
 
-    // Harmonisation des champs avec PriceSection
-    input,
-    textarea {
-      background-color: transparent;
-      font-family: 'Space Grotesk', sans-serif;
-      border: none;
-      border-bottom: 2px solid rgba(255, 171, 243, 0.3);
-      padding: 1rem 0;
-      width: 100%;
-      color: #fff;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-
-      @media screen and (min-width: 1024px) {
-        font-size: 1.6rem;
-      }
-
-      &::placeholder {
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 0.3);
+      label {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.5rem;
+        color: #ffabf3;
         text-transform: uppercase;
-        font-weight: 300;
-        opacity: 1;
+        letter-spacing: 0.1em;
       }
 
-      &:focus {
-        outline: none;
-        border-bottom-color: #ffabf3;
+      // Harmonisation des champs avec PriceSection
+      input,
+      textarea {
+        background-color: transparent;
+        font-family: 'Space Grotesk', sans-serif;
+        border: none;
+        border-bottom: 2px solid rgba(255, 171, 243, 0.3);
+        padding: 1rem 0;
+        width: 100%;
+        color: #fff;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+
+        @media screen and (min-width: 1024px) {
+          font-size: 1.6rem;
+        }
+
+        &::placeholder {
+          font-size: 1.4rem;
+          color: rgba(255, 255, 255, 0.3);
+          text-transform: uppercase;
+          font-weight: 300;
+          opacity: 1;
+        }
+
+        &:focus {
+          outline: none;
+          border-bottom-color: #ffabf3;
+        }
       }
-    }
 
-    textarea {
-      resize: none;
-      height: 12rem;
+      textarea {
+        resize: none;
+        height: 12rem;
 
-      &::placeholder {
-        // Aligné sur le haut pour le textarea
-        padding-top: 0.5rem;
+        &::placeholder {
+          // Aligné sur le haut pour le textarea
+          padding-top: 0.5rem;
+        }
       }
     }
 

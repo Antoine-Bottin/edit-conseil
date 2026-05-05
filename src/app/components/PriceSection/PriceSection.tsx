@@ -95,7 +95,6 @@ const PriceSection = () => {
             </select>
           </div>
 
-          {/* Champ Niveau de relecture */}
           <div className="field">
             <label htmlFor="niveauLecture">Niveau de relecture</label>
             <select

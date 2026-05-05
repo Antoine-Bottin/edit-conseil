@@ -68,10 +68,12 @@ const ContactSection = () => {
           éditorial
         </p>
       </div>
-      <div className="contact-section__form">
-        <form action={formAction} ref={formRef}>
+      <form className="contact-section__form" action={formAction} ref={formRef}>
+        <div className="field">
           <label htmlFor="name">Name</label>
           <input type="text" placeholder="Toto" name="name" required />
+        </div>
+        <div className="field">
           <label htmlFor="email">E-mail de contact</label>
           <input
             type="email"
@@ -79,13 +81,15 @@ const ContactSection = () => {
             name="email"
             required
           />
+        </div>
+        <div className="field">
           <label htmlFor="message">Votre message</label>
           <textarea placeholder="Bonjour..." name="message" required />
-          <button className="send-button" type="submit" disabled={isPending}>
-            {isPending ? 'Envoi...' : 'Envoyer  votre message'}
-          </button>
-        </form>
-      </div>
+        </div>
+        <button className="send-button" type="submit" disabled={isPending}>
+          {isPending ? 'Envoi...' : 'Envoyer  votre message'}
+        </button>
+      </form>
     </div>
   );
 };
