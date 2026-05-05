@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useRef, useState } from 'react';
+import { useActionState, useState } from 'react';
 import './styles.scss';
 
 interface FormState {
@@ -131,7 +131,10 @@ const PriceSection = () => {
             </strong>
             <p className="price-display__info">
               Basé sur {Number(signs).toLocaleString()} signes en mode{' '}
-              {prestation === 'correction' ? 'Correction' : 'SR'}.
+              {prestation === 'correction'
+                ? 'Correction'
+                : 'Secretariat de Rédaction'}
+              .
             </p>
           </div>
         )}
