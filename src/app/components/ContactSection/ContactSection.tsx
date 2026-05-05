@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from 'react';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import './styles.scss';
 
@@ -43,7 +43,7 @@ async function handleForm(__prevState: FormState | null, formData: FormData) {
 }
 
 const ContactSection = () => {
-  const formRef = useRef<HTMLFormElement>(null); // Pour cibler le formulaire
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [state, formAction, isPending] = useActionState(handleForm, {
     success: false,
@@ -70,14 +70,17 @@ const ContactSection = () => {
       </div>
       <div className="contact-section__form">
         <form action={formAction} ref={formRef}>
-          <input type="text" placeholder="Nom" name="name" required />
+          <label htmlFor="name">Name</label>
+          <input type="text" placeholder="Toto" name="name" required />
+          <label htmlFor="email">E-mail de contact</label>
           <input
             type="email"
-            placeholder="E-mail de contact"
+            placeholder="toto@gmail.com"
             name="email"
             required
           />
-          <textarea placeholder="Votre message" name="message" required />
+          <label htmlFor="message">Votre message</label>
+          <textarea placeholder="Bonjour..." name="message" required />
           <button className="send-button" type="submit" disabled={isPending}>
             {isPending ? 'Envoi...' : 'Envoyer  votre message'}
           </button>

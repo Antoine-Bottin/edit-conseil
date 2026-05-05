@@ -2,6 +2,7 @@ import ContactSection from './components/ContactSection/ContactSection';
 import HeroSection from './components/HeroSection/HeroSection';
 import MyselfSection from './components/MyselfSection/MyselfSection';
 import NumberSection from './components/NumberSection/NumberSection';
+import PriceSection from './components/PriceSection/PriceSection';
 import QuoteSection from './components/QuoteSection/QuoteSection';
 import Section from './components/Section/Section';
 import ServicesSection from './components/ServicesSection/ServicesSection';
@@ -28,7 +29,7 @@ const Main = () => {
         <ServicesSection />
       </Section>
       <Section id="prices">
-        <h1>Prices </h1>
+        <PriceSection />
       </Section>
       <Section id="contact">
         <ContactSection />

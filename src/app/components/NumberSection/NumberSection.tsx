@@ -9,7 +9,6 @@ import './styles.scss';
 const NumberSection = () => {
   const { ref, inView } = useInView({
     threshold: 0,
-    triggerOnce: true,
   });
 
   return (
