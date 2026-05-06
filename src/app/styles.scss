@@ -23,18 +23,25 @@
     margin-inline: 12rem;
   }
 
-  &__title {
-    position: absolute;
-    top: 7;
-    right: 5;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 3rem;
-    line-height: 0.9;
-    opacity: 30%;
+  position: relative;
+
+  &__logo {
+    position: fixed;
+    // --- CORRECTION : Ajout d'unités (ex: rem) ---
+    top: 1rem; // Correspond environ à '7' si ton unité de base est petite, sinon ajuste.
+    right: 1rem; // Idem pour '5'
     z-index: 2;
 
+    // --- Taille de base du logo (Mobile/Tablette) ---
+    height: 5rem;
+    width: 5rem;
+
     @media screen and (min-width: 1024px) {
-      font-size: 5rem;
+      // --- CORRECTION : Changer taille, pas font-size ---
+      height: 7rem; // Exemple : On agrandit un peu le logo sur desktop
+      width: 7rem;
+      top: 2rem; // Optionnel : On l'éloigne un peu plus du bord
+      right: 2rem;
     }
   }
 }

@@ -88,10 +88,8 @@ const PriceSection = () => {
               onChange={(e) => setPrestation(e.target.value)}
               required
             >
-              <option value="correction">Correction (25€/h)</option>
-              <option value="secretariat">
-                Secrétariat de rédaction (35€/h)
-              </option>
+              <option value="correction">Correction </option>
+              <option value="secretariat">Secrétariat de rédaction</option>
             </select>
           </div>
 
@@ -104,12 +102,8 @@ const PriceSection = () => {
               onChange={(e) => setLecture(e.target.value)}
               required
             >
-              <option value="preparation">
-                Préparation de copie (6-8k signes/h)
-              </option>
-              <option value="epreuves">
-                Relecture sur épreuves (10-12k signes/h)
-              </option>
+              <option value="preparation">Préparation de copie</option>
+              <option value="epreuves">Relecture sur épreuves</option>
             </select>
           </div>
 

@@ -7,6 +7,15 @@
   row-gap: 4rem;
   justify-content: center;
 
+  // --- Gestion du Landscape (Petit écran large) ---
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    padding: 2rem;
+  }
+
+  // --- Gestion Desktop ---
   @media screen and (min-width: 1024px) and (min-height: 501px) {
     flex-direction: row;
     column-gap: 4rem;
@@ -19,6 +28,10 @@
     justify-content: center;
     row-gap: 1.5rem;
     flex: 1;
+
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      width: 45%; // On réduit pour laisser de la place au formulaire
+    }
 
     &__main {
       font-size: var(--main-title);
@@ -45,13 +58,20 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 750px; // Aligné sur le calculateur
+    max-width: 750px;
     border: 0.1rem solid #ffabf3;
     background-color: #1a1a1a;
     padding: 4rem;
     border-radius: 0.5rem;
     box-shadow: 12px 12px 0px 0px rgba(255, 171, 243, 0.15);
     gap: 3rem;
+
+    // --- Ajustements Landscape pour le bloc formulaire ---
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      width: 50%;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
 
     @media screen and (min-width: 769px) {
       flex: 1;
@@ -62,15 +82,18 @@
       flex-direction: column;
       gap: 1.2rem;
 
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        gap: 0.5rem; // Plus serré en paysage
+      }
+
       label {
-        font-family: var(--font-mono, monospace);
+        font-family: 'Monospace', monospace;
         font-size: 1.5rem;
         color: #ffabf3;
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
 
-      // Harmonisation des champs avec PriceSection
       input,
       textarea {
         background-color: transparent;
@@ -83,16 +106,16 @@
         font-size: 1.5rem;
         transition: all 0.3s ease;
 
-        @media screen and (min-width: 1024px) {
-          font-size: 1.6rem;
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+          padding: 0.5rem 0;
+          font-size: 1.2rem;
         }
 
         &::placeholder {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           color: rgba(255, 255, 255, 0.3);
           text-transform: uppercase;
           font-weight: 300;
-          opacity: 1;
         }
 
         &:focus {
@@ -105,9 +128,8 @@
         resize: none;
         height: 12rem;
 
-        &::placeholder {
-          // Aligné sur le haut pour le textarea
-          padding-top: 0.5rem;
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+          height: 6rem; // Très réduit pour tenir dans les 500px de haut
         }
       }
     }
@@ -123,17 +145,11 @@
       text-transform: uppercase;
       border: none;
       cursor: pointer;
-      transition: all 0.2s ease;
       width: 100%;
 
-      &:hover:not(:disabled) {
-        filter: brightness(1.1);
-        transform: translateY(-2px);
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
+      @media screen and (orientation: landscape) and (max-height: 500px) {
+        padding: 1rem;
+        font-size: 1rem;
       }
     }
   }
