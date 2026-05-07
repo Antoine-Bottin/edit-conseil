@@ -30,7 +30,7 @@
     flex: 1;
 
     @media screen and (orientation: landscape) and (max-height: 500px) {
-      width: 45%; // On réduit pour laisser de la place au formulaire
+      width: 45%;
     }
 
     &__main {

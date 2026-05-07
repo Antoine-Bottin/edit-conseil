@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Newsreader, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 
-import './globals.css';
 import ScrollProvider from './components/ScrollProvider/ScrollProvider';
 import { ToastContainer } from 'react-toastify';
+
+import './globals.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

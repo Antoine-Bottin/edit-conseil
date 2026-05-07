@@ -7,7 +7,7 @@ const ServicesSection = () => {
     <div className="services-section">
       <div className="services-section__titles">
         <div className="services-section__titles__title">Services </div>
-        <div className="services-section__titles__title">Editos</div>
+        <div className="services-section__titles__title">Éditos</div>
       </div>
 
       <div className="services-section__cards">

@@ -1,20 +1,20 @@
 export const servicesCardsContent = [
   {
     number: '01',
-    title: 'relecture-correction & secrétariat de rédaction',
-    description: `Orthotypographie, syntaxe et rythme. Nettoyage méticuleux pour une clarté absolue sans compromis sur le style.`,
+    title: 'relecture-correction et secrétariat de rédaction',
+    description: `La forme est aussi importante que le fond. Une coquille peut brouiller la lecture d’un texte et perdre l’attention de votre client, de votre prospect ou de votre lecteur.`,
     mainWord: 'précision',
   },
   {
     number: '02',
     title: 'réécriture',
-    description: `Transformer le brut en or. Réaligner le ton, insuffler de l'énergie et affirmer l'identité d'une marque.`,
+    description: `Fidèle à vos idées, à vos mots, à votre style ou à un langage défini en amont avec vous, je vous aide à produire un texte cohérent, percutant, répondant à vos objectifs de communication.`,
     mainWord: 'adaptabilité',
   },
   {
     number: '03',
     title: 'Accompagnement littéraire',
-    description: `Gestion de flux éditoriaux complexes. Du brief à la mise en page finale, une coordination d'expert.`,
+    description: `Vous souhaitez finir le manuscrit que vous avez commencé il y a quelques mois, quelques années, mais vous ne savez pas comment le retravailler ?`,
     mainWord: 'rigueur',
   },
 ];

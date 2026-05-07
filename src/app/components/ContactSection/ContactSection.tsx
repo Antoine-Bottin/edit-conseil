@@ -70,21 +70,16 @@ const ContactSection = () => {
       </div>
       <form className="contact-section__form" action={formAction} ref={formRef}>
         <div className="field">
-          <label htmlFor="name">Name</label>
-          <input type="text" placeholder="Toto" name="name" required />
+          <label htmlFor="name">Votre nom</label>
+          <input type="text" placeholder="Nom" name="name" required />
         </div>
         <div className="field">
-          <label htmlFor="email">E-mail de contact</label>
-          <input
-            type="email"
-            placeholder="toto@gmail.com"
-            name="email"
-            required
-          />
+          <label htmlFor="email">Votre e-mail</label>
+          <input type="email" placeholder="E-MAIL" name="email" required />
         </div>
         <div className="field">
           <label htmlFor="message">Votre message</label>
-          <textarea placeholder="Bonjour..." name="message" required />
+          <textarea placeholder="Message" name="message" required />
         </div>
         <button className="send-button" type="submit" disabled={isPending}>
           {isPending ? 'Envoi...' : 'Envoyer  votre message'}

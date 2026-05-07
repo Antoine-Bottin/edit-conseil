@@ -2,6 +2,8 @@
   height: var(--content-height, 100%);
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
   align-items: center;
   justify-content: space-around;
   display: flex;
@@ -32,7 +34,7 @@
     }
 
     strong {
-      background-image: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
+      background-image: var(--gradient);
       color: transparent;
       background-clip: text;
     }

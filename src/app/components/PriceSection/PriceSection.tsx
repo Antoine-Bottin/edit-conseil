@@ -118,16 +118,17 @@ const PriceSection = () => {
         {state.price > 0 && !isPending && (
           <div className="price-display">
             <p className="price-display__label">
-              Estimation pour votre document :
+              Tarif estimatif non contractuel :
             </p>
             <strong className="price-display__amount">
-              {state.price} € TTC*
+              {state.price} € TTC
             </strong>
             <p className="price-display__info">
-              Basé sur {Number(signs).toLocaleString()} signes en mode{' '}
+              Basé sur {Number(signs).toLocaleString()} signes pour une
+              prestation de{' '}
               {prestation === 'correction'
-                ? 'Correction'
-                : 'Secretariat de Rédaction'}
+                ? 'correction'
+                : 'secrétariat de rédaction'}
               .
             </p>
           </div>

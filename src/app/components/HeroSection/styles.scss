@@ -149,15 +149,15 @@
 
       &__button-1 {
         color: #1000a9;
-        background-image: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
+        background-image: var(--gradient);
         color: #5b005b;
         border: none;
-      }
 
-      &__button-2 {
-        color: #5b005b;
-        background-color: transparent;
-        border: 2px solid #5b005b;
+        @media screen and (min-width: 769px) {
+          margin-top: 2rem;
+          padding: 2rem 4rem;
+          font-size: 1.65rem;
+        }
       }
     }
   }

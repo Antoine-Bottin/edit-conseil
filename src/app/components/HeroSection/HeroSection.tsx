@@ -26,9 +26,6 @@ const HeroSection = () => {
           >
             Démarrer un projet
           </button>
-          <button className="hero-section__text__buttons__button-2">
-            Voir le manifeste
-          </button>
         </div>
       </div>
       <div className="hero-section__picture">

@@ -1,13 +1,35 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --gradient: linear-gradient(to right, #8040b1 0%, #4500ce 100%);
+  --borderColor: #4500ce
+  color-scheme: light; 
+
+
+
+  margin-inline: 2.5rem;
+
+  @media screen and (min-width: 1024px) {
+    margin-inline: 7.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-inline: 10rem;
+  }
+
+  @media screen and (min-width: 1536px) {
+    margin-inline: 12rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ededed;
-  }
+    --gradient: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
+    --borderColor:'red'
+    color-scheme: dark; 
+}
 }
 
 html {
@@ -62,8 +84,4 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+
