@@ -1,12 +1,19 @@
 'use client';
 
-import { IoHomeOutline, IoMailOutline } from 'react-icons/io5';
-import { FaDollarSign } from 'react-icons/fa';
+import {
+  IoHomeOutline,
+  IoShareSocial,
+  IoStatsChartSharp,
+} from 'react-icons/io5';
+import { FaEuroSign } from 'react-icons/fa';
 import { useScroll } from '~/app/hooks/useScroll';
 import { usePathname } from 'next/navigation';
 import { scrollToSection } from '~/app/utils/scroll';
 
 import './styles.scss';
+import { LiaUniversitySolid } from 'react-icons/lia';
+import { FaHandshakeSimple } from 'react-icons/fa6';
+import { HiOutlineChatBubbleLeftRight } from 'react-icons/hi2';
 
 const Menu = ({
   scrollRef,
@@ -41,30 +48,35 @@ const Menu = ({
           onClick={() => scrollToSection('main')}
           title="Home"
         />
-        <FaDollarSign
+        <LiaUniversitySolid
           className="menu-container__icons-wrapper__icon__myself"
           onClick={() => scrollToSection('myself')}
           title="Myself"
         />
-        <IoMailOutline
+        <IoStatsChartSharp
           className="menu-container__icons-wrapper__icon__numbers"
           onClick={() => scrollToSection('numbers')}
           title="Numbers"
-        />{' '}
-        <IoMailOutline
+        />
+        <FaHandshakeSimple
           className="menu-container__icons-wrapper__icon__services"
           onClick={() => scrollToSection('services')}
           title="Services"
-        />{' '}
-        <IoMailOutline
+        />
+        <FaEuroSign
           className="menu-container__icons-wrapper__icon__prices"
           onClick={() => scrollToSection('prices')}
           title="Prices"
         />
-        <IoHomeOutline
+        <HiOutlineChatBubbleLeftRight
           className="menu-container__icons-wrapper__icon__contact"
           onClick={() => scrollToSection('contact')}
           title="Contact"
+        />
+        <IoShareSocial
+          className="menu-container__icons-wrapper__icon__contact"
+          onClick={() => scrollToSection('social')}
+          title="Social"
         />
       </div>
     </nav>

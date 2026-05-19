@@ -57,15 +57,6 @@
     }
   }
 
-  &__title {
-    position: relative;
-    top: -2rem;
-    border-radius: 2rem;
-    border: white solid 0.2rem;
-    border-bottom: none;
-    padding: 0.5rem 1rem;
-  }
-
   &__icons-wrapper {
     height: 100%;
     width: 100%;
@@ -77,6 +68,10 @@
     cursor: pointer;
     transition: all 0.2s;
     column-gap: 1rem;
+
+    @media screen and (min-width: 769px) and (min-height: 501px) {
+      font-size: 3rem;
+    }
 
     &__icon {
       &__main,
