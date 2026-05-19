@@ -1,4 +1,3 @@
-import Image from 'next/image';
 
 import ContactSection from './components/ContactSection/ContactSection';
 import HeroSection from './components/HeroSection/HeroSection';
@@ -10,21 +9,11 @@ import Section from './components/Section/Section';
 import ServicesSection from './components/ServicesSection/ServicesSection';
 
 import './styles.scss';
+import SocialSection from './components/SocialSection/SocialSection';
 
 const Main = () => {
   return (
     <div className="page-container">
-      <div className="page-container__logo">
-        <Image
-          src="/assets/edit_logo_black.png"
-          alt="Logo EDIT brand"
-          fill // L'image remplit le parent
-          sizes="5rem" // Optionnel mais recommandé pour la performance
-          style={{ objectFit: 'contain' }} // Garde les proportions sans couper
-          priority
-        />
-      </div>
-
       <Section id="main">
         <HeroSection />
       </Section>
@@ -45,6 +34,9 @@ const Main = () => {
       </Section>
       <Section id="contact">
         <ContactSection />
+      </Section>
+      <Section id="social">
+        <SocialSection />
       </Section>
     </div>
   );

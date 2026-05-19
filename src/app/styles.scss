@@ -3,20 +3,17 @@
 
   &__logo {
     position: fixed;
-    // --- CORRECTION : Ajout d'unités (ex: rem) ---
-    top: 1rem; // Correspond environ à '7' si ton unité de base est petite, sinon ajuste.
-    right: 1rem; // Idem pour '5'
+    top: 1rem;
+    right: 1rem;
     z-index: 2;
 
-    // --- Taille de base du logo (Mobile/Tablette) ---
     height: 5rem;
     width: 5rem;
 
     @media screen and (min-width: 1024px) {
-      // --- CORRECTION : Changer taille, pas font-size ---
-      height: 7rem; // Exemple : On agrandit un peu le logo sur desktop
+      height: 7rem;
       width: 7rem;
-      top: 2rem; // Optionnel : On l'éloigne un peu plus du bord
+      top: 2rem;
       right: 2rem;
     }
   }

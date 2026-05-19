@@ -3,16 +3,22 @@
 import { IoHomeOutline, IoMailOutline } from 'react-icons/io5';
 import { FaDollarSign } from 'react-icons/fa';
 import { useScroll } from '~/app/hooks/useScroll';
+import { usePathname } from 'next/navigation';
+import { scrollToSection } from '~/app/utils/scroll';
 
 import './styles.scss';
-import { scrollToSection } from '~/app/utils/scroll';
 
 const Menu = ({
   scrollRef,
 }: {
   scrollRef: React.RefObject<HTMLDivElement | null>;
 }) => {
+  const pathname = usePathname();
   const scrollPosition = useScroll(scrollRef);
+
+  if (pathname !== '/') {
+    return null;
+  }
 
   const windowsHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
 
@@ -26,6 +32,7 @@ const Menu = ({
       ? 'menu-container'
       : 'menu-container menu-container--centered';
 
+  // 2. CORRECTION SYNTAXE : Le return renvoie directement le JSX, sans accolades globales
   return (
     <nav className={menuContainerClasses}>
       <div className="menu-container__icons-wrapper">
