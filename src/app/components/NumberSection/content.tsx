@@ -3,13 +3,13 @@ import dayjs from 'dayjs';
 import CountUp from 'react-countup';
 
 const weeklyReads: Record<number, { min: number; max: number }> = {
-  0: { min: 64, max: 132 }, // Sunday
-  1: { min: 5, max: 14 }, // Monday
-  2: { min: 15, max: 31 }, // Tuesday
-  3: { min: 32, max: 47 }, // Wednesday
-  4: { min: 48, max: 63 }, // Thursday
-  5: { min: 64, max: 132 }, // Friday
-  6: { min: 64, max: 132 }, // Saturday
+  0: { min: 220000, max: 300000 }, // Sunday
+  1: { min: 40000, max: 50000 }, // Monday
+  2: { min: 61000, max: 110000 }, // Tuesday
+  3: { min: 111000, max: 155000 }, // Wednesday
+  4: { min: 166000, max: 210000 }, // Thursday
+  5: { min: 220000, max: 300000 }, // Friday
+  6: { min: 220000, max: 300000 }, // Saturday
 };
 
 export const cardsContent: {
@@ -30,7 +30,7 @@ export const cardsContent: {
   },
   {
     title: () => '+15',
-    description: 'livres de référence, (presque) constamment ouverts',
+    description: 'livres de référence (presque) constamment ouverts',
   },
   {
     title: (start) => (
@@ -46,8 +46,10 @@ export const cardsContent: {
         start={start ? 0 : undefined}
         preserveValue={true}
         redraw={false}
+        useGrouping={true}
+        separator=" "
       />
     ),
-    description: 'pages relues cette semaine',
+    description: 'signes espaces comprises relus cette semaine',
   },
 ];

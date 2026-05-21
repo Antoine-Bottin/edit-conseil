@@ -14,8 +14,8 @@ async function handleForm(
   formData: FormData,
 ): Promise<FormState> {
   const signs = Number(formData.get('signs'));
-  const typePrestation = formData.get('typePrestation'); // Correction ou Secrétariat
-  const niveauLecture = formData.get('niveauLecture'); // Préparation ou Épreuves
+  const typePrestation = formData.get('typePrestation');
+  const niveauLecture = formData.get('niveauLecture');
 
   // Simulation de calcul
   await new Promise((res) => setTimeout(res, 600));
@@ -61,12 +61,14 @@ const PriceSection = () => {
 
   return (
     <div className="price-section">
-      <h1 className="price-section__title">Tarification</h1>
+      <h1 className="price-section__title">Tarifs</h1>
       <div className="price-section__calculator">
         <form action={formAction} className="price-section__form">
           {/* Champ Nombre de signes */}
           <div className="field">
-            <label htmlFor="signs">Volume (signes espaces comprises)</label>
+            <label htmlFor="signs">
+              Volume de votre document (signes espaces comprises)
+            </label>
             <input
               id="signs"
               type="number"
@@ -80,7 +82,7 @@ const PriceSection = () => {
 
           {/* Champ Type de prestation */}
           <div className="field">
-            <label htmlFor="typePrestation">Type de prestation</label>
+            <label htmlFor="typePrestation">Type de prestation souhaitée</label>
             <select
               id="typePrestation"
               name="typePrestation"
@@ -94,7 +96,7 @@ const PriceSection = () => {
           </div>
 
           <div className="field">
-            <label htmlFor="niveauLecture">Niveau de relecture</label>
+            <label htmlFor="niveauLecture">Type de relecture</label>
             <select
               id="niveauLecture"
               name="niveauLecture"

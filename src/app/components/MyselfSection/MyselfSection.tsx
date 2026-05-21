@@ -8,8 +8,8 @@ const SKILLS_DATA = [
     id: 'cec',
     text: (
       <>
-        <strong>Relectrice-correctrice diplômée</strong> du Centre d’écriture et
-        de communication (relecture et correction professionnelle, réécriture)
+        <strong>Relectrice-correctrice et relectrice-rewriter diplômée</strong>{' '}
+        du Centre d’écriture et de communication
       </>
     ),
   },

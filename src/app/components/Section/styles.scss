@@ -3,6 +3,10 @@
   --section-padding-top: 5rem;
   --section-padding-bottom: 7rem;
 
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    --section-padding-top: 6.5rem;
+  }
+
   // Responsive one
   @media screen and (min-width: 1441px) {
     --section-padding-top: 10rem;

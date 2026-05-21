@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
-  row-gap: 2rem;
   gap: 2rem;
 
   @media screen and (orientation: landscape) and (max-height: 500px) {
@@ -60,20 +59,18 @@
       font-weight: bold;
       text-transform: uppercase;
       line-height: 60px;
+      text-align: center;
 
       @media screen and (orientation: landscape) and (max-height: 500px) {
         font-size: 3.5rem;
+        text-align: left;
       }
 
       @media screen and (min-width: 768px) and (min-height: 501px) {
         font-size: var(--main-title);
+        text-align: left;
         line-height: 12rem;
       }
-
-      // @media screen and (min-width: 1024px) {
-      //   font-size: var(--main-title);
-      //   line-height: 120px;
-      // }
     }
 
     &__sub {
@@ -90,13 +87,7 @@
 
       @media screen and (min-width: 768px) and (min-height: 501px) {
         font-size: 3rem;
-        margin-top: 1rem;
       }
-
-      // @media screen and (min-width: 1024px) {
-      //   font-size: 3rem;
-      //   margin-top: 1rem;
-      // }
     }
 
     &__buttons {
@@ -108,29 +99,35 @@
         justify-content: unset;
       }
 
-      &__button-1,
-      &__button-2 {
+      &__button-1 {
         padding: 1rem 2rem;
         font-family: 'Space Grotesk', sans-serif;
         font-weight: bold;
         font-size: 1.2rem;
         text-transform: uppercase;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-        @media screen and (orientation: landscape) and (max-height: 500px) {
-          padding: 0.5rem 1rem;
-          font-weight: bold;
-          font-size: 1.2rem;
-        }
+        color: #5b005b;
+        background-image: var(--gradient);
+        border: none;
 
         @media screen and (min-width: 768px) and (min-height: 501px) {
           padding: 1.5rem 3rem;
           font-size: 1.4rem;
         }
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1024px) and (min-height: 501px) {
           padding: 2rem 4rem;
           font-size: 1.65rem;
+        }
+
+        @media screen and (min-width: 769px) and (min-height: 501px) {
+          margin-top: 4rem;
+        }
+
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+          padding: 0.8rem 1rem;
+          margin-block-start: 1rem;
+          font-size: 1.2rem;
         }
 
         @media (hover: hover) {
@@ -146,19 +143,6 @@
           color: white;
         }
       }
-
-      &__button-1 {
-        color: #1000a9;
-        background-image: var(--gradient);
-        color: #5b005b;
-        border: none;
-
-        @media screen and (min-width: 769px) {
-          margin-top: 2rem;
-          padding: 2rem 4rem;
-          font-size: 1.65rem;
-        }
-      }
     }
   }
 
@@ -168,13 +152,16 @@
     position: relative;
     min-height: 20rem;
 
-    @media screen and (min-width: 1024px) {
-      height: 80dvh;
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+      margin-inline-start: 2rem;
+    }
+
+    @media screen and (min-width: 1024px) and (min-height: 501px) {
+      height: 75dvh;
+      margin-inline-start: 4rem;
     }
 
     img {
-      // width: 100%; // Critical: make sure the image fills the container
-      // height: 100%; // Critical: make sure the image fills the container
       object-fit: cover;
       border-radius: 1rem;
     }

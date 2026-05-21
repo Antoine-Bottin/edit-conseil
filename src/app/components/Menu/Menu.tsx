@@ -5,15 +5,15 @@ import {
   IoShareSocial,
   IoStatsChartSharp,
 } from 'react-icons/io5';
-import { FaEuroSign } from 'react-icons/fa';
 import { useScroll } from '~/app/hooks/useScroll';
 import { usePathname } from 'next/navigation';
 import { scrollToSection } from '~/app/utils/scroll';
 
 import './styles.scss';
-import { LiaUniversitySolid } from 'react-icons/lia';
 import { FaHandshakeSimple } from 'react-icons/fa6';
 import { HiOutlineChatBubbleLeftRight } from 'react-icons/hi2';
+import { LuGraduationCap } from 'react-icons/lu';
+import { MdOutlineEuroSymbol } from 'react-icons/md';
 
 const Menu = ({
   scrollRef,
@@ -48,7 +48,7 @@ const Menu = ({
           onClick={() => scrollToSection('main')}
           title="Home"
         />
-        <LiaUniversitySolid
+        <LuGraduationCap
           className="menu-container__icons-wrapper__icon__myself"
           onClick={() => scrollToSection('myself')}
           title="Myself"
@@ -63,7 +63,7 @@ const Menu = ({
           onClick={() => scrollToSection('services')}
           title="Services"
         />
-        <FaEuroSign
+        <MdOutlineEuroSymbol
           className="menu-container__icons-wrapper__icon__prices"
           onClick={() => scrollToSection('prices')}
           title="Prices"

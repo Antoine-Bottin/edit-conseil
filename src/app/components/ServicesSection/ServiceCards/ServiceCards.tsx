@@ -14,8 +14,11 @@ const ServiceCards = ({
   mainWord,
 }: ServiceCardProps) => {
   return (
-    <div className="services-cards-container">
+    <div className="services-cards-container" id={mainWord}>
       <div>
+        {mainWord == 'rigueur' ? (
+          <div className="not-available">Not available</div>
+        ) : null}
         <div
           className="services-cards-container__top__card-number"
           id={mainWord}

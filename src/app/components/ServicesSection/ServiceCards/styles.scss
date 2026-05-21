@@ -7,6 +7,16 @@
   padding: 2rem;
   width: 100%;
   height: fit-content;
+  z-index: 1;
+
+  // .not-available {
+  //   color: red;
+  //   z-index: 50;
+  // }
+
+  // &#rigueur {
+  //   opacity: 20%;
+  // }
 
   @media screen and (orientation: landscape) and (max-height: 500px) {
     height: 19rem;
