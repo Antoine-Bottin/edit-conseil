@@ -21,7 +21,16 @@ const SocialSection = () => {
       >
         <Image src="assets/Linkedin_logo.svg" alt="Linkedin logo" fill />
       </a>
+      <a
+        className="social-section__blog"
+        href="https://www.startingbooks.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image src="/assets/starting_book_logo.png" alt="Blog logo" fill />
+      </a>
       <div className="social-section__links">
+        <div>&copy; 2026</div>
         <a
           className="social-section__links__link"
           href="/about"
