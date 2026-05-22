@@ -64,8 +64,8 @@ const ContactSection = () => {
           EDIT.
         </div>
         <p className="contact-section__presentation__sub">
-          Prêt à élever votre discours? Discutons de votre prochain projet
-          éditorial
+          Prêt·e à valoriser vos documents, retravailler vos textes et élever
+          votre discours ? Dites-moi tout grâce au formulaire de contact !
         </p>
       </div>
       <form className="contact-section__form" action={formAction} ref={formRef}>
