@@ -1,20 +1,50 @@
 .page-container {
   position: relative;
 
-  &__logo {
+  &__header {
     position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 2;
 
-    height: 5rem;
-    width: 5rem;
+    display: flex;
+    align-items: center; // Aligne le texte et le logo verticalement
+    gap: 1rem; // Espace entre les mots et le logo
 
     @media screen and (min-width: 1024px) {
-      height: 7rem;
-      width: 7rem;
       top: 2rem;
       right: 2rem;
+      gap: 1.5rem;
+    }
+
+    &__words {
+      display: flex;
+      flex-direction: column; // Empile les mots les uns sous les autres
+      text-align: right; // Aligne le texte contre le logo
+
+      span {
+        font-size: 1rem;
+        // font-family: var(--font-spacegrotesk); // Décommente si tu veux appliquer une de tes polices
+        line-height: 1.2;
+      }
+
+      @media screen and (min-width: 1024px) {
+        span {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    &__logo {
+      position: relative; // Indispensable pour le "fill" de Next/Image
+      height: 5rem;
+      width: 5rem;
+      flex-shrink: 0; // Empêche le logo de s'écraser si le texte est long
+
+      @media screen and (min-width: 1024px) {
+        height: 7rem;
+        width: 7rem;
+      }
     }
   }
 }
