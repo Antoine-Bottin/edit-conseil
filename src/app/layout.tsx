@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import './globals.css';
 
 import './styles.scss';
+import { Metadata } from 'next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,6 +36,45 @@ const newsreader = Newsreader({
 
   subsets: ['latin'],
 });
+
+export const metadata: Metadata = {
+  title: 'EDIT.',
+  description: 'Conseil, écriture, relecture',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  keywords: [
+    'Hélène Bottin',
+    'Correction',
+    'Relecture',
+    'Réécriture',
+    'Correctrice',
+    'Correcteur',
+    'Relectrice',
+    'Relecteur',
+    'Réécrivaine',
+    'Rewriter',
+    'Réécrivain',
+    'Secrétaire de rédaction',
+    'Secrétariat de rédaction',
+    'SR',
+    'Conseil littéraire',
+    'Conseil éditorial',
+    'Éditorial',
+    'Prête-plume',
+    'Ghostwriter',
+    'Français',
+    'Écriture',
+    'Écrivain',
+    'Accompagnement',
+  ],
+  metadataBase: new URL('https://www.portfolio.abottin.dev'),
+  openGraph: {
+    title: 'Edit website ',
+    description: `Helene Bottin's professional website`,
+    images: [{ url: '/assets/edit_logo_black.png' }],
+    type: 'website',
+    url: 'https://www.portfolio.abottin.dev',
+  },
+};
 
 export default function RootLayout({
   children,
