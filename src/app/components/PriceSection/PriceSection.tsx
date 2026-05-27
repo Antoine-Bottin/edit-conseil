@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState, useState, startTransition } from 'react';
 import './styles.scss';
 
 interface FormState {
@@ -28,23 +28,30 @@ async function handleForm(
     };
   }
 
+  // Cas particulier : Réécriture (40€ les 8 000 signes)
+  if (typePrestation === 'reecriture') {
+    const totalPrice = (signs / 8000) * 40;
+    return {
+      success: true,
+      error: null,
+      price: Math.round(totalPrice),
+    };
+  }
+
   // 1. Déterminer la vitesse (signes par heure)
-  // Préparation : moy. 7000 | Épreuves : moy. 11000
-  const signsPerHour = niveauLecture === 'preparation' ? 7000 : 11000;
+  const signsPerHour = niveauLecture === 'preparation' ? 7000 : 10000;
 
   // 2. Déterminer le tarif horaire
-  // Correction : 25€ | Secrétariat : 35€
   const hourlyRate = typePrestation === 'correction' ? 25 : 35;
 
   // 3. Calcul final
-  // Temps estimé = signes totaux / vitesse
   const estimatedHours = signs / signsPerHour;
   const totalPrice = estimatedHours * hourlyRate;
 
   return {
     success: true,
     error: null,
-    price: Math.round(totalPrice), // On arrondit pour un devis plus propre
+    price: Math.round(totalPrice),
   };
 }
 
@@ -59,11 +66,24 @@ const PriceSection = () => {
     price: 0,
   });
 
+  // Cette fonction empêche React de "nettoyer" le formulaire après le calcul
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Bloque la remise à zéro par défaut
+    const formData = new FormData(e.currentTarget);
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
+
   return (
     <div className="price-section">
-      <h1 className="price-section__title">Tarifs</h1>
+      <h1 className="price-section__title">
+        Tarifs de correction et réécriture
+      </h1>
+
       <div className="price-section__calculator">
-        <form action={formAction} className="price-section__form">
+        {/* On remplace l'attribut action par notre fonction handleSubmit */}
+        <form onSubmit={handleSubmit} className="price-section__form">
           {/* Champ Nombre de signes */}
           <div className="field">
             <label htmlFor="signs">
@@ -90,30 +110,35 @@ const PriceSection = () => {
               onChange={(e) => setPrestation(e.target.value)}
               required
             >
-              <option value="correction">Correction </option>
+              <option value="correction">Correction</option>
               <option value="secretariat">Secrétariat de rédaction</option>
+              <option value="reecriture">Réécriture</option>
             </select>
           </div>
 
-          <div className="field">
-            <label htmlFor="niveauLecture">Type de relecture</label>
-            <select
-              id="niveauLecture"
-              name="niveauLecture"
-              value={lecture}
-              onChange={(e) => setLecture(e.target.value)}
-              required
-            >
-              <option value="preparation">Préparation de copie</option>
-              <option value="epreuves">Relecture sur épreuves</option>
-            </select>
-          </div>
+          {/* On conditionne la présence du DOM entier selon le useState */}
+          {prestation !== 'reecriture' && (
+            <div className="field">
+              <label htmlFor="niveauLecture">Type de relecture</label>
+              <select
+                id="niveauLecture"
+                name="niveauLecture"
+                value={lecture}
+                onChange={(e) => setLecture(e.target.value)}
+                required
+              >
+                <option value="preparation">Préparation de copie</option>
+                <option value="epreuves">Relecture sur épreuves</option>
+              </select>
+            </div>
+          )}
 
           <button type="submit" className="price-button" disabled={isPending}>
             {isPending ? 'Calcul en cours...' : 'Calculer le tarif'}
           </button>
         </form>
       </div>
+
       <div
         className={`price-result ${state.price > 0 && !isPending ? 'is-visible' : ''}`}
       >
@@ -128,9 +153,22 @@ const PriceSection = () => {
             <p className="price-display__info">
               Basé sur {Number(signs).toLocaleString()} signes pour une
               prestation de{' '}
-              {prestation === 'correction'
-                ? 'correction'
-                : 'secrétariat de rédaction'}
+              <strong>
+                {prestation === 'correction' && 'correction'}
+                {prestation === 'secretariat' && 'secrétariat de rédaction'}
+                {prestation === 'reecriture' && 'réécriture'}
+              </strong>
+              {prestation !== 'reecriture' && (
+                <>
+                  {' '}
+                  en{' '}
+                  <strong>
+                    {lecture === 'preparation'
+                      ? 'préparation de copie'
+                      : 'relecture sur épreuves'}
+                  </strong>
+                </>
+              )}
               .
             </p>
           </div>

@@ -81,6 +81,18 @@
         }
       }
 
+      input[type='number'] {
+        -moz-appearance: textfield; // Pour (les vieux) Firefox
+        appearance: textfield; // <-- STANDARD (fait taire le warning)
+        background-image: none;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none; // Pour (les vieux) Chrome/Safari/Edge
+          appearance: none; // <-- STANDARD (fait taire le warning)
+          margin: 0;
+        }
+      }
+
       input,
       select {
         background: transparent;
