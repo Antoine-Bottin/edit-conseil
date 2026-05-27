@@ -27,7 +27,7 @@ const Page = () => {
         <ul className="legal-notice__list">
           <li>
             <strong>Propriétaire :</strong> Hélène Bottin EI – 82903593000017 –
-            196 route de Dieppe 76860 Ouville la Rivière
+            7 place du Petit Enfer, 76200 Dieppe
           </li>
           <li>
             <strong>Créateur :</strong> Hélène Bottin EI
@@ -45,10 +45,6 @@ const Page = () => {
             <a href="mailto:contact@edit-conseil.com">
               contact@edit-conseil.com
             </a>
-          </li>
-          <li>
-            <strong>Hébergeur :</strong> Wix.com Inc. – 500 Terry A François
-            Blvd San Francisco, CA 94158
           </li>
           <li>
             <strong>Crédits :</strong> Les mentions légales ont été générées et
@@ -338,7 +334,7 @@ const Page = () => {
 
       {/* 8. Cookies */}
       <section className="legal-notice__section" id="cookies">
-        <h2>8. Liens hypertextes et cookies</h2>
+        <h2>8. Liens hypertextes</h2>
         <p>
           Le site{' '}
           <a
@@ -353,29 +349,6 @@ const Page = () => {
           Bottin n’a pas la possibilité de vérifier le contenu des sites ainsi
           visités, et n’assumera en conséquence aucune responsabilité de ce
           fait.
-        </p>
-        <p>
-          La navigation sur le site{' '}
-          <a
-            href="https://www.edit-conseil.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            www.edit-conseil.com
-          </a>{' '}
-          est susceptible de provoquer l’installation de cookie(s) sur
-          l’ordinateur de l’utilisateur. Un cookie est un fichier de petite
-          taille, qui ne permet pas l’identification de l’utilisateur, mais qui
-          enregistre des informations relatives à la navigation d’un ordinateur
-          sur un site. Les données ainsi obtenues visent à faciliter la
-          navigation ultérieure sur le site, et ont également vocation à
-          permettre diverses mesures de fréquentation.
-        </p>
-        <p>
-          Le refus d’installation d’un cookie peut entraîner l’impossibilité
-          d’accéder à certains services. L’utilisateur peut toutefois configurer
-          son ordinateur de la manière suivante, pour refuser l’installation des
-          cookies :
         </p>
 
         <ul className="legal-notice__sublist">
@@ -458,8 +431,9 @@ const Page = () => {
           >
             http://cnpm-mediation-consommation.eu
           </a>{' '}
-          ou par voie postale en écrivant à CNPM - MEDIATION - CONSOMMATION - 27
-          Avenue de la Libération 42400 SAINT-CHAMOND
+          ou par voie postale en écrivant à CNPM MEDIATION CONSOMMATION Centre
+          d’Affaires Stéphanois SAS IMMEUBLE L’HORIZON – ESPLANADE DE FRANCE 3,
+          RUE J. CONSTANT MILLERET – 42000 SAINT-ÉTIENNE
         </p>
       </section>
 

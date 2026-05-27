@@ -45,7 +45,7 @@
     @media screen and (orientation: landscape) and (max-height: 500px) {
       flex: 1;
       padding: 1.5rem 2rem;
-      margin-top: 4rem; // Laisse passer le titre absolute en haut à droite
+      margin-top: 4rem; 
       margin-bottom: 0;
     }
   }
@@ -82,13 +82,13 @@
       }
 
       input[type='number'] {
-        -moz-appearance: textfield; // Pour (les vieux) Firefox
-        appearance: textfield; // <-- STANDARD (fait taire le warning)
+        -moz-appearance: textfield;
+        appearance: textfield;
         background-image: none;
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
-          -webkit-appearance: none; // Pour (les vieux) Chrome/Safari/Edge
-          appearance: none; // <-- STANDARD (fait taire le warning)
+          -webkit-appearance: none;
+          appearance: none;
           margin: 0;
         }
       }
@@ -102,10 +102,9 @@
         padding: 1rem 0;
         font-size: 1.5rem;
         cursor: pointer;
-        appearance: none; // Supprime la flèche par défaut (iOS/Chrome/Safari)
-        border-radius: 0; // Évite les bords arrondis sur mobile
+        appearance: none;
+        border-radius: 0;
 
-        // Ajout d'une icône personnalisée pour la flèche
         background-image:
           linear-gradient(45deg, transparent 50%, #ffabf3 50%),
           linear-gradient(135deg, #ffabf3 50%, transparent 50%);
@@ -122,16 +121,13 @@
           border-bottom-color: #ffabf3;
         }
 
-        // --- Style des options quand le menu est OUVERT ---
         option {
-          background-color: #1a1a1a; // Couleur de fond du menu ouvert
+          background-color: #1a1a1a; 
           color: #fff;
           padding: 1rem;
-          font-family: sans-serif; // Les polices custom marchent mal sur <option>
+          font-family: sans-serif; 
           font-size: 1.3rem;
 
-          // Note : On ne peut pas styliser le hover/selection
-          // de l'option nativement, mais on peut forcer le fond.
           &:checked {
             background-color: #ffabf3;
             color: #000;

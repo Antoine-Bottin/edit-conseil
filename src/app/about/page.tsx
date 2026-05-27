@@ -18,8 +18,8 @@ const Page = () => {
       <p>
         <strong>Edit.</strong> se réserve le droit de refuser un texte pour des
         motifs légitimes, notamment si Edit. considère que le texte envoyé
-        contient des propos à connotation raciste, xénophobe, négationniste ou
-        pédophile (cette liste n’est pas exhaustive)
+        contient des propos à connotation raciste, xénophobe, négationniste,
+        sexiste ou pédocriminel (cette liste n’est pas exhaustive)
       </p>
     </div>
   );

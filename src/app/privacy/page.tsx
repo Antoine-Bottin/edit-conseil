@@ -18,8 +18,8 @@ const Page = () => {
         <h2>ARTICLE 1. PARTIES</h2>
         <p>
           La présente politique de confidentialité est applicable entre E D I T
-          ., auto-entreprise, SIREN : 829 035 930, siège social : 196 route de
-          Dieppe 76860 Ouville la Rivière, France, email :{' '}
+          ., auto-entreprise, SIREN : 829 035 930, siège social : 7 place du
+          Petit Enfer, 76200 Dieppe, France, email :{' '}
           <a href="mailto:contact@edit-conseil.com">contact@edit-conseil.com</a>
           , ci-après « E D I T . », et toute personne se connectant au Site,
           ci-après « l’Internaute ».
@@ -98,7 +98,7 @@ const Page = () => {
           <p>
             Le responsable de la collecte et des données traitées sur le Site
             est E D I T ., auto-entreprise, SIREN : 829 035 930, siège social :
-            196 route de Dieppe, 76860 Ouville la Rivière, France, email :{' '}
+            7 place du Petit Enfer, 76200 Dieppe, France, email :{' '}
             <a href="mailto:contact@edit-conseil.com">
               contact@edit-conseil.com
             </a>
@@ -225,8 +225,8 @@ const Page = () => {
             <a href="mailto:contact@edit-conseil.com">
               contact@edit-conseil.com
             </a>{' '}
-            ou par courrier à E D I T . , 196 route de Dieppe 76860 Ouville la
-            Rivière, France.
+            ou par courrier à E D I T . , 7 place du Petit Enfer, 76200 Dieppe,
+            France.
           </p>
         </div>
       </section>
