@@ -1,6 +1,7 @@
 .services-cards-container {
-  display: flex;
+  position: relative;
   flex-direction: column;
+  display: flex;
   justify-content: space-between;
   row-gap: 3rem;
   background-color: #1a1a1a;
@@ -9,14 +10,37 @@
   height: fit-content;
   z-index: 1;
 
-  // .not-available {
-  //   color: red;
-  //   z-index: 50;
-  // }
+  &.is-disabled {
+    pointer-events: none;
 
-  // &#rigueur {
-  //   opacity: 20%;
-  // }
+    > div:not(.not-available) {
+      opacity: 0.3;
+      filter: grayscale(100%);
+    }
+  }
+
+  .not-available {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ff6bea;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-family:
+      Space Grotesk,
+      sans-serif;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    @media screen and (min-width: 769px) and (min-height: 501px) {
+      font-size: 1.2rem;
+      top: 2rem;
+      right: 2rem;
+    }
+  }
 
   @media screen and (orientation: landscape) and (max-height: 500px) {
     height: 19rem;

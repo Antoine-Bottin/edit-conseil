@@ -5,6 +5,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   mainWord: string;
+  isDisabled?: boolean;
 }
 
 const ServiceCards = ({
@@ -12,13 +13,16 @@ const ServiceCards = ({
   title,
   description,
   mainWord,
+  isDisabled = false,
 }: ServiceCardProps) => {
   return (
-    <div className="services-cards-container" id={mainWord}>
+    <div
+      className={`services-cards-container ${isDisabled ? 'is-disabled' : ''}`}
+      id={mainWord}
+    >
+      {isDisabled && <div className="not-available">Indisponible</div>}
+
       <div>
-        {mainWord == 'rigueur' ? (
-          <div className="not-available">Not available</div>
-        ) : null}
         <div
           className="services-cards-container__top__card-number"
           id={mainWord}

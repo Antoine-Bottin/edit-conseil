@@ -16,5 +16,6 @@ export const servicesCardsContent = [
     title: 'Accompagnement littéraire',
     description: `Vous souhaitez finir le manuscrit que vous avez commencé il y a quelques mois, quelques années, mais vous ne savez pas comment le retravailler ?`,
     mainWord: 'rigueur',
+    isDisabled: true,
   },
 ];

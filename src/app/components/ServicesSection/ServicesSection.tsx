@@ -12,13 +12,14 @@ const ServicesSection = () => {
 
       <div className="services-section__cards">
         {servicesCardsContent.map(
-          ({ number, title, description, mainWord }, key) => (
+          ({ number, title, description, mainWord, isDisabled }, key) => (
             <ServiceCards
               number={number}
               title={title}
               description={description}
               mainWord={mainWord}
               key={key}
+              isDisabled={isDisabled}
             />
           ),
         )}
