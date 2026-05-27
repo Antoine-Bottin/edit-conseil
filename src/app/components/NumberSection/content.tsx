@@ -26,7 +26,16 @@ export const cardsContent: {
     description: "années d'expérience",
   },
   {
-    title: () => '+150',
+    title: (start) => (
+      <CountUp
+        end={151}
+        start={start ? 147 : undefined}
+        preserveValue={true}
+        redraw={false}
+        useGrouping={true}
+        prefix="+"
+      />
+    ),
     description: 'clients (entreprises et particuliers)',
   },
   {
