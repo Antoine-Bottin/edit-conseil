@@ -12,6 +12,11 @@ const weeklyReads: Record<number, { min: number; max: number }> = {
   6: { min: 220000, max: 300000 }, // Saturday
 };
 
+const today = dayjs().day();
+const { min, max } = weeklyReads[today];
+
+const stableRandomReads = Math.floor(Math.random() * (max - min + 1)) + min;
+
 export const cardsContent: {
   title: (start?: boolean) => ReactNode;
   description: string;
@@ -25,7 +30,16 @@ export const cardsContent: {
     description: 'clients (entreprises et particuliers)',
   },
   {
-    title: () => '+350',
+    title: (start) => (
+      <CountUp
+        end={352}
+        start={start ? 350 : undefined}
+        preserveValue={true}
+        redraw={false}
+        useGrouping={true}
+        prefix="+"
+      />
+    ),
     description: 'projets',
   },
   {
@@ -35,14 +49,7 @@ export const cardsContent: {
   {
     title: (start) => (
       <CountUp
-        end={
-          Math.floor(
-            Math.random() *
-              (weeklyReads[dayjs().day()].max -
-                weeklyReads[dayjs().day()].min +
-                1),
-          ) + weeklyReads[dayjs().day()].min
-        }
+        end={stableRandomReads}
         start={start ? 0 : undefined}
         preserveValue={true}
         redraw={false}
