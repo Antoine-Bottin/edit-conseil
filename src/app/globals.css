@@ -1,9 +1,9 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --gradient: linear-gradient(to right, #8040b1 0%, #4500ce 100%);
-  --borderColor: #4500ce
-  color-scheme: light; 
+    --background: #000000;
+    --foreground: #ededed;
+    --gradient: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
+ 
+    color-scheme: dark; 
 
 
 
@@ -22,15 +22,15 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --background: #000000;
     --foreground: #ededed;
     --gradient: linear-gradient(to right, #dbc2ee 0%, #4500ce 100%);
-    --borderColor:'red'
-    color-scheme: dark; 
+ 
+    color-scheme: light; 
 }
-}
+} */
 
 html {
   min-height: 100dvh;

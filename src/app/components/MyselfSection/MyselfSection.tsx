@@ -17,9 +17,9 @@ const SKILLS_DATA = [
       <p>
         J&apos;ai les connaissances, l&apos;entraînement et la certification
         nécessaires à la relecture et la correction professionnelle de tous
-        types de documents (mapuscrits, rapports, réponses à appel
+        types de documents (tapuscrits, rapports, réponses à appel
         d&apos;offres, magazines professionnels…). Je suis entraînée à la
-        réécriture de textes, quels qu&apos;ils soient. Je le fait en fonction
+        réécriture de textes, quels qu&apos;ils soient. Je le fais en fonction
         des objectifs d&apos;écriture ou de communication établis en amont.
       </p>
     ),

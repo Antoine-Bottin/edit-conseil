@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import './styles.scss';
 
 const SocialSection = () => {
@@ -27,7 +26,7 @@ const SocialSection = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="/assets/starting_book_logo.png" alt="Blog logo" fill />
+        <h1 className="social-section__blog__title">Dans les Starting Books</h1>
       </a>
       <div className="social-section__links">
         <div>&copy; 2026</div>

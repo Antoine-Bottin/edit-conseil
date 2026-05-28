@@ -99,7 +99,7 @@ export default function RootLayout({
         <div className="page-container__header">
           <div className="page-container__header__words">
             <span>Relecture.</span>
-            <span>Ecriture.</span>
+            <span>Écriture.</span>
             <span>Conseil.</span>
           </div>
 
