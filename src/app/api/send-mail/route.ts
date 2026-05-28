@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.HELENE_RESEND_API_KEY);
 
   try {
     const { email, message, name } = await request.json();
@@ -16,8 +16,8 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Antoine Bottin <antoine@contact.abottin.dev>',
-      to: 'a.bottin.dev@gmail.com',
+      from: 'Edit-conseil <helene@edit-conseil.com>',
+      to: 'contact@edit-conseil.com',
       subject: `Message de ${name}`,
       html: `<p>${message}</p>`,
       replyTo: email,
