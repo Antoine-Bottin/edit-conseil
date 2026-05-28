@@ -1,17 +1,11 @@
-import Image from 'next/image';
-
 import { Geist, Geist_Mono, Newsreader, Space_Grotesk } from 'next/font/google';
-
+import Image from 'next/image';
 import { Analytics } from '@vercel/analytics/next';
-
-import ScrollProvider from './components/ScrollProvider/ScrollProvider';
-
-import { ToastContainer } from 'react-toastify';
-
-import './globals.css';
-
-import './styles.scss';
 import { Metadata } from 'next';
+import { ToastContainer } from 'react-toastify';
+import ScrollProvider from './components/ScrollProvider/ScrollProvider';
+import './globals.css';
+import './styles.scss';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

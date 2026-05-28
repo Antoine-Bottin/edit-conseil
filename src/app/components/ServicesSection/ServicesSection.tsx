@@ -1,5 +1,5 @@
-import { servicesCardsContent } from './ServiceCards/content';
 import ServiceCards from './ServiceCards/ServiceCards';
+import { servicesCardsContent } from './ServiceCards/content';
 import './styles.scss';
 
 const ServicesSection = () => {
