@@ -4,8 +4,9 @@ const FAQSestion = () => {
   return (
     <div className="faq-section">
       <p className="faq-section__content">
-        Pour en savoir plus sur mes prestations, mes tarifs, la manière dont je
-        travaille…, rendez-vous dans la
+        Préparation de copie, relecture sur épreuves, secrétariat de rédaction,
+        signes espaces comprises, logiciels, calcul du tarif des prestations…
+        Pour en savoir plus, rendez-vous dans la{' '}
       </p>
       <a href="/faq" target="_blank" rel="noopener noreferrer">
         FAQ.

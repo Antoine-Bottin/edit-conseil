@@ -28,11 +28,11 @@ const Main = () => {
       <Section id="services">
         <ServicesSection />
       </Section>
-      <Section id="faq">
-        <FAQSestion />
-      </Section>
       <Section id="prices">
         <PriceSection />
+      </Section>
+      <Section id="faq">
+        <FAQSestion />
       </Section>
       <Section id="contact">
         <ContactSection />
