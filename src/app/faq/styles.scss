@@ -1,0 +1,112 @@
+.faq-section {
+  max-width: 120rem; // Légèrement agrandi pour accueillir le texte plus grand
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  font-family: var(--font-spacegrotesk), sans-serif;
+  background-color: #000000; // Ton fond noir
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem; // Plus d'espace entre les blocs pour laisser respirer le fond noir
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__question {
+    font-size: 2.3rem; // Plus grand (anciennement 1.35rem)
+    font-weight: 700;
+    color: #ffffff; // Blanc pur pour les titres bien visibles
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em; // Rend le Space Grotesk magnifique en grand
+  }
+
+  &__answer {
+    font-size: 1.6rem; // Plus grand (anciennement 1.05rem) pour une lecture confortable
+    color: #cccccc; // Blanc cassé / gris clair : indispensable pour éviter la fatigue visuelle sur fond noir
+    line-height: 1.7; // Plus d'interligne pour éviter l'effet "gros bloc compact"
+    margin-left: 0;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      color: #ffffff; // Les éléments importants ressortent en blanc pur
+      font-weight: 600;
+    }
+
+    a {
+      color: #60a5fa; // Un bleu plus clair (type bleu néon/pastel) pour ressortir sur le noir
+      text-decoration: underline;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: #93c5fd;
+      }
+    }
+  }
+
+  // Liste spécifique pour Word, Pages, InDesign
+  &__software-list {
+    list-style-type: disc;
+    padding-left: 1.75rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Section bas de page / Appel à l'action
+  &__footer {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #222222; // Ligne de séparation subtile sur fond noir
+    text-align: center;
+    font-size: 1.35rem; // Plus grand également
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.6;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Ajustement responsive pour les smartphones
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 8rem 1.25rem;
+
+    &__question {
+      font-size: 1.6rem; // Reste lisible mais adapté aux petits écrans
+    }
+
+    &__answer {
+      font-size: 1.4rem;
+      line-height: 1.6;
+    }
+
+    &__footer {
+      font-size: 1.15rem;
+    }
+  }
+}

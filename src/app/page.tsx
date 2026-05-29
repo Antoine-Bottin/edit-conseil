@@ -1,5 +1,5 @@
-
 import ContactSection from './components/ContactSection/ContactSection';
+import FAQSestion from './components/FAQSection/FaqSection';
 import HeroSection from './components/HeroSection/HeroSection';
 import MyselfSection from './components/MyselfSection/MyselfSection';
 import NumberSection from './components/NumberSection/NumberSection';
@@ -7,9 +7,8 @@ import PriceSection from './components/PriceSection/PriceSection';
 import QuoteSection from './components/QuoteSection/QuoteSection';
 import Section from './components/Section/Section';
 import ServicesSection from './components/ServicesSection/ServicesSection';
-
-import './styles.scss';
 import SocialSection from './components/SocialSection/SocialSection';
+import './styles.scss';
 
 const Main = () => {
   return (
@@ -28,6 +27,9 @@ const Main = () => {
       </Section>
       <Section id="services">
         <ServicesSection />
+      </Section>
+      <Section id="faq">
+        <FAQSestion />
       </Section>
       <Section id="prices">
         <PriceSection />
