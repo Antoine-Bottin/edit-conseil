@@ -77,7 +77,7 @@ const PriceSection = () => {
 
   return (
     <div className="price-section">
-      <h1 className="price-section__title">Tarifs</h1>
+      <h2 className="price-section__title">Tarifs</h2>
 
       <div className="price-section__calculator">
         {/* On remplace l'attribut action par notre fonction handleSubmit */}

@@ -1,9 +1,20 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import './styles.scss';
+
+export const metadata: Metadata = {
+  title: 'FAQ | EDIT.',
+  description:
+    'Les réponses aux questions fréquentes sur les prestations de relecture, correction et secrétariat de rédaction proposées par Edit.',
+  alternates: {
+    canonical: '/faq',
+  },
+};
 
 const Page = () => {
   return (
     <div className="faq-section">
+      <h1 className="faq-section__title">Foire aux questions</h1>
       <dl className="faq-section__list">
         {/* Question 1 */}
         <div className="faq-section__item">

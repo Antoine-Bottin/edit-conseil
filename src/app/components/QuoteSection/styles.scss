@@ -57,6 +57,11 @@
     position: relative;
     height: var(--content-height, 100%);
 
+    @media screen and (min-width: 1025px) and (min-height: 501px) {
+      height: calc(var(--content-height, 100%) - 10rem);
+      align-self: center;
+    }
+
     img {
       object-fit: cover;
       border-radius: 1rem;

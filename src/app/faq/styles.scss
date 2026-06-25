@@ -3,7 +3,15 @@
   margin: 0 auto;
   padding: 4rem 1.5rem;
   font-family: var(--font-spacegrotesk), sans-serif;
-  background-color: #000000;
+  background-color: var(--background);
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 3.5rem;
+    letter-spacing: -0.02em;
+  }
 
   &__list {
     display: flex;
@@ -20,7 +28,7 @@
   &__question {
     font-size: 2.3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--foreground);
     line-height: 1.4;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -28,7 +36,7 @@
 
   &__answer {
     font-size: 1.6rem;
-    color: #cccccc;
+    color: var(--foreground-muted);
     line-height: 1.7;
     margin-left: 0;
 
@@ -42,7 +50,7 @@
     }
 
     strong {
-      color: #ffffff;
+      color: var(--foreground);
       font-weight: 600;
     }
 
@@ -76,11 +84,11 @@
   &__footer {
     margin-top: 5rem;
     padding-top: 2.5rem;
-    border-top: 1px solid #222222; // Ligne de séparation subtile sur fond noir
+    border-top: 1px solid var(--border-subtle); // Ligne de séparation subtile
     text-align: center;
     font-size: 1.35rem; // Plus grand également
     font-weight: 500;
-    color: #ffffff;
+    color: var(--foreground);
     line-height: 1.6;
 
     p {

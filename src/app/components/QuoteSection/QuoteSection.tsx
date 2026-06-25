@@ -7,14 +7,9 @@ const QuoteSection = () => {
 
   return (
     <div className="quote-section">
-      <h1 className="quote-section__title">{quote}</h1>
+      <blockquote className="quote-section__title">{quote}</blockquote>
       <div className="quote-section__picture">
-        <Image
-          src="/assets/picture_books.jpeg"
-          fill
-          alt="Helene Bottin's picture"
-          preload
-        />
+        <Image src="/assets/picture_books.jpeg" fill alt="Pile de livres" />
       </div>
     </div>
   );

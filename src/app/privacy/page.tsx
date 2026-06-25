@@ -1,4 +1,14 @@
+import { Metadata } from 'next';
 import './styles.scss';
+
+export const metadata: Metadata = {
+  title: 'Politique de confidentialité | EDIT.',
+  description:
+    'Comment Edit. collecte, utilise et protège vos données personnelles lors de votre navigation et de l’utilisation du formulaire de contact.',
+  alternates: {
+    canonical: '/privacy',
+  },
+};
 
 const Page = () => {
   return (
@@ -184,8 +194,20 @@ const Page = () => {
         <div className="privacy-policy__subsection">
           <h3>4.3.3. Destinataires des données</h3>
           <p>
-            Les données collectées sont consultables uniquement par E D I T ..
+            Les données collectées sont consultables par E D I T . ainsi que
+            par les sous-traitants suivants, dans la limite nécessaire à
+            l&apos;exécution de leurs prestations :
           </p>
+          <ul className="privacy-policy__list">
+            <li>
+              – Resend, pour l&apos;acheminement des emails envoyés depuis le
+              formulaire de contact,
+            </li>
+            <li>
+              – Vercel Analytics, pour la mesure d&apos;audience anonymisée du
+              Site.
+            </li>
+          </ul>
         </div>
 
         {/* 4.3.4. Durée */}

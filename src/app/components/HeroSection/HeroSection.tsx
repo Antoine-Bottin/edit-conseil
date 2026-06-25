@@ -11,14 +11,14 @@ const HeroSection = () => {
       <div className="hero-section__text">
         <div className="hero-section__text__badge">Artisan du doute</div>
         <h1 className="hero-section__text__main">Hélène Bottin-Demirel</h1>
-        <h4 className="hero-section__text__sub">
+        <h2 className="hero-section__text__sub">
           Relectrice-correctrice, secrétaire de rédaction, rewriter et
           conseiller littéraire et éditorial de langue française.
           <br />
           <br />
           Je vous aide à trouver le mot juste pour des communications
           cohérentes, lisibles et adaptées à leur audience.
-        </h4>
+        </h2>
         <div className="hero-section__text__buttons">
           <button
             onClick={() => scrollToSection('contact')}
@@ -32,8 +32,8 @@ const HeroSection = () => {
         <Image
           src="/assets/HeleneBottin-light.jpg"
           fill
-          alt="Helene Bottin's picture"
-          preload
+          alt="Portrait d'Hélène Bottin-Demirel"
+          priority
         />
       </div>
     </div>

@@ -1,4 +1,14 @@
+import { Metadata } from 'next';
 import './styles.scss';
+
+export const metadata: Metadata = {
+  title: 'À propos | EDIT.',
+  description:
+    'Edit. est une micro-entreprise de relecture-correction et de conseil en éditorialisation de contenus, portée par Hélène Bottin.',
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 const Page = () => {
   return (

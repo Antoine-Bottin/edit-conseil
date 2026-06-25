@@ -8,6 +8,14 @@
   text-align: center;
   font-family: var(--font-spacegrotesk);
 
+  &__title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+  }
+
   &__content {
     font-size: 3rem;
 

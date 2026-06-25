@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import { FaLinkedinIn } from 'react-icons/fa6';
 import './styles.scss';
 
 const SocialSection = () => {
   return (
-    <div className="social-section">
+    <footer className="social-section">
       <a
         className="social-section__malt"
         href="https://www.malt.fr/profile/helenebottin"
@@ -18,7 +19,7 @@ const SocialSection = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src="assets/Linkedin_logo.svg" alt="Linkedin logo" fill />
+        <FaLinkedinIn aria-label="Linkedin logo" />
       </a>
       <a
         className="social-section__blog"
@@ -26,7 +27,7 @@ const SocialSection = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h1 className="social-section__blog__title">Dans les Starting Books</h1>
+        <h2 className="social-section__blog__title">Dans les Starting Books</h2>
       </a>
       <div className="social-section__links">
         <div>&copy; 2026</div>
@@ -55,7 +56,7 @@ const SocialSection = () => {
           Politique de confidentialité
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
 

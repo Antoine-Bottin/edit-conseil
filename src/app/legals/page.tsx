@@ -1,4 +1,14 @@
+import { Metadata } from 'next';
 import './styles.scss';
+
+export const metadata: Metadata = {
+  title: 'Mentions légales | EDIT.',
+  description:
+    'Informations légales relatives à l’éditeur, l’hébergement et la propriété intellectuelle du site Edit.',
+  alternates: {
+    canonical: '/legals',
+  },
+};
 
 const Page = () => {
   return (
@@ -322,8 +332,12 @@ const Page = () => {
           .
         </p>
         <p>
-          Le site n&apos;est pas déclaré à la CNIL car il ne recueille pas
-          d&apos;informations personnelles.
+          Conformément au Règlement Général sur la Protection des Données
+          (RGPD), aucune déclaration préalable à la CNIL n&apos;est requise
+          pour les traitements de données personnelles effectués via le
+          formulaire de contact du site. Pour plus d&apos;informations sur la
+          collecte et le traitement de ces données, veuillez consulter notre{' '}
+          <a href="/privacy">politique de confidentialité</a>.
         </p>
         <p>
           Les bases de données sont protégées par les dispositions de la loi du

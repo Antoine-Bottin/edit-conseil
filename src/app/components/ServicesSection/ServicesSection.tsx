@@ -5,10 +5,10 @@ import './styles.scss';
 const ServicesSection = () => {
   return (
     <div className="services-section">
-      <div className="services-section__titles">
-        <div className="services-section__titles__title">Services </div>
-        <div className="services-section__titles__title">Éditos</div>
-      </div>
+      <h2 className="services-section__titles">
+        <span className="services-section__titles__title">Services </span>
+        <span className="services-section__titles__title">Éditos</span>
+      </h2>
 
       <div className="services-section__cards">
         {servicesCardsContent.map(
