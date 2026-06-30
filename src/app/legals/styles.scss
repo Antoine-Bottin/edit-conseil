@@ -3,7 +3,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
-  font-size: 2rem;
-  padding-block: 2rem;
+  row-gap: 2.5rem;
+  font-size: 1.6rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+
+  @media screen and (min-width: 1024px) {
+    row-gap: 2rem;
+    font-size: 2rem;
+    padding-block: 2rem;
+  }
 }
