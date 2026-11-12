@@ -6,6 +6,36 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME_LENGTH = 100;
 const MAX_MESSAGE_LENGTH = 5000;
 
+// Les messages légitimes n'ont aucune raison de contenir un lien : c'est le
+// vecteur des spams/phishing envoyés par les bots.
+const URL_REGEX =
+  /(https?:\/\/|www\.|\b[a-z0-9-]+\.(com|net|org|io|ru|xyz|top|info|biz|co|me|app|link|site|online|click|live|shop|club)\b)/i;
+const EMAIL_STRIP_REGEX = /[^\s@]+@[^\s@]+\.[^\s@]+/g;
+
+function containsLink(value: string) {
+  return URL_REGEX.test(value.replace(EMAIL_STRIP_REGEX, ''));
+}
+
+// Limitation de débit "best effort" (mémoire de l'instance) : 3 envois / 10 min / IP.
+const RATE_LIMIT_MAX = 3;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const hits = new Map<string, number[]>();
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS,
+  );
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 1000) {
+    for (const [key, times] of hits) {
+      if (times.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) hits.delete(key);
+    }
+  }
+  return recent.length > RATE_LIMIT_MAX;
+}
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, '&amp;')
@@ -16,6 +46,12 @@ function escapeHtml(value: string) {
 }
 
 export async function POST(request: Request) {
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
+  if (isRateLimited(ip)) {
+    return Response.json({ error: 'Trop de tentatives' }, { status: 429 });
+  }
+
   const resend = new Resend(process.env.HELENE_RESEND_API_KEY);
 
   try {
@@ -36,6 +72,13 @@ export async function POST(request: Request) {
     ) {
       return Response.json(
         { error: 'Champs invalides ou manquants' },
+        { status: 400 },
+      );
+    }
+
+    if (containsLink(name) || containsLink(message)) {
+      return Response.json(
+        { error: 'Les liens ne sont pas autorisés dans le message' },
         { status: 400 },
       );
     }

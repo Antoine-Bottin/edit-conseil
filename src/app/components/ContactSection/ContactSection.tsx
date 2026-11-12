@@ -31,8 +31,12 @@ async function handleForm(__prevState: FormState | null, formData: FormData) {
     if (!response.ok) {
       const errorData = await response.json();
       console.error('Erreur API:', errorData);
-      toast.error("Erreur lors de l'envoi");
-      return { success: false, error: "Erreur lors de l'envoi" };
+      const message =
+        response.status === 400 && typeof errorData?.error === 'string'
+          ? errorData.error
+          : "Erreur lors de l'envoi";
+      toast.error(message);
+      return { success: false, error: message };
     }
 
     toast.success('Message envoyé avec succès');
